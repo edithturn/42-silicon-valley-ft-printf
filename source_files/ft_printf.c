@@ -5,34 +5,38 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: epuclla <epuclla@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/06/30 09:25:02 by epuclla           #+#    #+#             */
-/*   Updated: 2020/07/08 11:55:28 by epuclla          ###   ########.fr       */
+/*   Created: 2020/07/12 23:06:51 by epuclla           #+#    #+#             */
+/*   Updated: 2020/07/15 10:33:13 by epuclla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../header/ft_printf.h"
 
-//ft_printf("%d", 42)
-//*format = "d"
-//... = 42
 int ft_printf(const char *format, ...)
 {
-	int		i;
-	t_conversors conversor;
+	t_info	*info;
+	int length;
 
-	va_start(conversor.arguments, format);
-	i = 0; //TODO: No sendng a "d"
-	while (format[i]  != '\0')
+	info = (t_info *)ft_memalloc(sizeof(t_info));
+	va_start(info->ap, format);
+	info->format = format;
+	while(*info->format)
 	{
-			if (format[i] == '%')
-				i = ft_find_conversion(&format[ i ] );
-			else
-				i++;
-			
-			/* llamar a dispatcher*/
-			/*i = i + ft_process_conversion(&format[i], &conversor);*/
+		info->indicator = 0;
+		while(*info->format && *info->format != '%')
+		{
+			ft_putchar(*info->format);
+			info->length_int++;
+			info->format++;
+		}
+		if(*info->format && *info->format == '%')
+		{
+			//printf(" This: %d", va_arg(info->ap, int));
+			info = process_input(info);
+		}
 	}
-
-	va_end(conversor.arguments);
-	return (i);
+	va_end(info->ap);
+	length = info->length_int;
+	free(info);
+	return(length);
 }

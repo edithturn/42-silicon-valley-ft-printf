@@ -42,3 +42,16 @@ assembler, languaje intermediate, se genran objets, then ensamblado {flow}
 
 
 https://github.com/lgutter/ft_printf
+
+
+
+### Compilation
+```bash
+cd /home/edith/workspace/42/ft_printf/42-silicon-valley-ft-printf/test_files
+```
+
+```bash
+export FNC="../source_files/ft_printf.c  ../source_files/ft_process_input.c  ../source_files/ft_process_decimal_integer.c  ../libft/ft_bzero.c  ../libft/ft_memset.c ../libft/ft_putchar.c ../libft/ft_itoa.c ../libft/ft_strdup.c"
+
+gcc main.c $FNC
+```

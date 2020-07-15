@@ -1,19 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_process_input.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: epuclla <epuclla@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/06 11:46:45 by epuclla           #+#    #+#             */
-/*   Updated: 2020/07/08 10:36:37 by epuclla          ###   ########.fr       */
+/*   Created: 2020/07/13 01:16:09 by epuclla           #+#    #+#             */
+/*   Updated: 2020/07/13 11:14:23 by epuclla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../header/ft_printf.h"
 
-int main()
+static t_info *process_converter(t_info *info )
 {
-	ft_printf("Hola %d", 42);
-	return (0);
+	if((*info->format == 'd' || *info->format == 'i') && info->indicator == 0 )
+		info = process_decinal_integer(info);
+
+	return (info);
+}
+
+t_info	*process_input(t_info	*info)
+{
+	info->format++;
+	info = process_converter(info);
+	return (info);
 }
