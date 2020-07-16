@@ -6,7 +6,7 @@
 /*   By: epuclla <epuclla@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/11 01:07:37 by epuclla           #+#    #+#             */
-/*   Updated: 2020/07/15 10:36:53 by epuclla          ###   ########.fr       */
+/*   Updated: 2020/07/16 11:52:16 by epuclla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 int main()
 {
-	ft_printf("Edith has %d cats", 42);
+	//ft_printf("Edith has %d cats\n", 42);
+	ft_printf("My name is %s Puclla\n", "Edith");
 	return (0);
 }
