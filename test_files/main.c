@@ -6,7 +6,7 @@
 /*   By: epuclla <epuclla@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/11 01:07:37 by epuclla           #+#    #+#             */
-/*   Updated: 2020/07/19 18:15:31 by epuclla          ###   ########.fr       */
+/*   Updated: 2020/07/25 13:08:06 by epuclla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,12 @@ int main()
 {
 	int a = 10;
 	int *ptr = &a;
-	//ft_printf("Edith has %d cats\n", 42);
-	//ft_printf("My name is %s Puclla\n", "Edith");
-	//ft_printf("My name start with %c letter\n", 'E');
+	//ft_printf("Edith has %d cats and %d dogs\n", 42, 2);
+	
+	//ft_printf("My name starts with %c\n", 'E');
+	//printf("My name starts with %-5c\n", "E    ");
+
+	//ft_printf("%d\n", -7);
 	/*Test %p 
 	ft_printf("ft_printf %p\n", (void*)&ptr);
 	printf("printf %p\n", (void*)&ptr); */
@@ -28,8 +31,16 @@ int main()
 	int *p = &b;
 	printf("%p\n", p);*/
 
-	// %
+	/*%
 	ft_printf("%%\n");
-	printf("%%");
+	printf("%%");*/
+
+	//char *str = "hello";
+	//printf("%^-9s", str);	
+
+
+	// String
+	ft_printf("My name is %-20s Puclla\n", "Edith");
+	printf("My name is %-20s Puclla\n", "Edith");
 	return (0);
 }
