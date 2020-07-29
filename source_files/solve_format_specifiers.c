@@ -6,13 +6,12 @@
 /*   By: epuclla <epuclla@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/13 01:31:50 by epuclla           #+#    #+#             */
-/*   Updated: 2020/07/28 16:14:29 by epuclla          ###   ########.fr       */
+/*   Updated: 2020/07/28 23:57:49 by epuclla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/ft_printf.h"
 
-//cspdiuxX%
 t_info *solve_character(t_info *info)
 {
 	char	c;
@@ -57,17 +56,7 @@ t_info *solve_string(t_info *info)
 	return (info);
 }
 
-
-
-// long long p
-// 1 bytes char = p
-// p >> 8;
-// char p = ;
-// 0x FD FG DF DF DF DR DF DF
-
-// 0 0 1 0 0 0 1 0 >> 1
-// 0 0 0 1 0 0 0 1 >> 8
-t_info *solve_pointer_void(t_info *info)
+t_info *solve_pointer(t_info *info)
 {
 	unsigned	long	long	p;
 
@@ -81,7 +70,7 @@ t_info *solve_pointer_void(t_info *info)
 	return (info);
 }
 
-t_info *solve_unsigned_int(t_info *info)
+t_info *solve_decimal_integer(t_info *info)
 {
 	char  *n;
 	n = ft_itoa(va_arg(info->ap, long long));
@@ -94,38 +83,25 @@ t_info *solve_unsigned_int(t_info *info)
 	return (info);
 }
 
-t_info *solve_decinal_integer(t_info *info)
+t_info *solve_unsigned_decimal_integer(t_info *info)
+{
+	char  *n;
+	n = ft_itoa(va_arg(info->ap, long long));
+	while(*n)
+	{
+		ft_putchar(*n);
+		n++;
+	}
+	info->format++;
+	return (info);
+}
+
+t_info *solve_unsigned_hexadecimal_integer(t_info *info)
 {
 	// aplicar contexto
 	char  *n;
 	n = ft_itoa(va_arg(info->ap, long long));
 
-	while(*n)
-	{
-		ft_putchar(*n);
-		n++;
-	}
-	info->format++;
-	return (info);
-}
-
-t_info *solve_unsigned_int_lower(t_info *info)
-{
-	char  *n;
-	n = ft_itoa(va_arg(info->ap, long long));
-	while(*n)
-	{
-		ft_putchar(*n);
-		n++;
-	}
-	info->format++;
-	return (info);
-}
-
-t_info *solve_unsigned_int_upper(t_info *info)
-{
-	char  *n;
-	n = ft_itoa(va_arg(info->ap, long long));
 	while(*n)
 	{
 		ft_putchar(*n);
@@ -144,14 +120,3 @@ t_info *solve_percent_sign(t_info *info)
 	return (info);
 	
 }
-
-
-
-
-// 1 valor de lista -> "Eddie "
-// 2 ->  "5988"
-// 3 -> " something"
-// Printf("Eddie %-14.d something", 5988)
-// Eddie
-// 5988
-// something

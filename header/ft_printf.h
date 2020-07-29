@@ -19,16 +19,16 @@ enum e_flags
 
 
 // Enum for Distpach table
+//cspdiuxX%
 enum e_dispatch
 { 
     e_char,
 	e_string,
-	e_pointer_void,
+	e_pointer,
 	e_decimal_int,
-	e_u_int,
-	e_u_int_lower,
-	e_u_int_upper,
-	e_percent_sign,
+	e_u_dec_int,
+	e_u_hex_int,
+	e_percentage,
 	e_lenght
 };
 
@@ -50,14 +50,15 @@ typedef	struct		s_info
 t_info	*eval_input(t_info	*info);
 
 // Funcions conversors
+//cspdiuxX%
 t_info *solve_character(t_info *info);
 t_info *solve_string(t_info *info);
-t_info *solve_pointer_void(t_info *info);
-t_info *solve_unsigned_int(t_info *info);
-t_info *solve_decinal_integer(t_info *info);
-t_info *solve_unsigned_int_lower(t_info *info);
-t_info *solve_unsigned_int_upper(t_info *info);
+t_info *solve_pointer(t_info *info);
+t_info *solve_decimal_integer(t_info *info);
+t_info *solve_unsigned_decimal_integer(t_info *info);
+t_info *solve_unsigned_hexadecimal_integer(t_info *info);
 t_info *solve_percent_sign(t_info *info);
+
 
 
 // Dispatcher
