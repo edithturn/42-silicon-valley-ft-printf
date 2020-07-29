@@ -61,7 +61,7 @@ t_info *solve_percent_sign(t_info *info);
 
 
 // Dispatcher
-typedef t_info *eval_function(t_info *info);
+typedef t_info *eval_format_specifiers(t_info *info);
 
 // eval_context
 t_info	*set_flags(t_info *info);

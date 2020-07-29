@@ -6,7 +6,7 @@
 /*   By: epuclla <epuclla@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/13 01:16:09 by epuclla           #+#    #+#             */
-/*   Updated: 2020/07/28 22:36:46 by epuclla          ###   ########.fr       */
+/*   Updated: 2020/07/28 23:16:31 by epuclla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ t_info	*eval_input(t_info	*info)
 	if (*info->format == 's')
 		number = e_char;
 	
-	eval_function	*my_array[e_lenght] = {
+	eval_format_specifiers	*format_specifiers_array[e_lenght] = {
 		[e_char] = &solve_character,
 		[e_string] = &solve_string,
 		[e_decimal_int] = &solve_decinal_integer,
@@ -43,7 +43,7 @@ t_info	*eval_input(t_info	*info)
 		[e_percent_sign] = &solve_percent_sign,
 	};
 
-	info = my_array[number](info);
+	info = format_specifiers_array[number](info);
 
 	return (info);
 }
