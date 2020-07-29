@@ -21,8 +21,8 @@ typedef	struct		s_info
 	va_list		ap;
 	int			length_int;
 	const char	*format;
-	int			mfw;
-	int			prec;
+	int			width;
+	int			precision;
 	char		flag[5];
 	char		length_char[5];
 	int			indicator;
@@ -46,8 +46,9 @@ t_info *solve_percent_sign(t_info *info);
 
 // eval_context
 t_info	*set_flags(t_info *info);
-
-
+t_info	*set_width(t_info *info);
+t_info *set_precision(t_info *info);
+t_info *set_length(t_info *info);
 //util
 t_info	*clean_flags(t_info *info);
 

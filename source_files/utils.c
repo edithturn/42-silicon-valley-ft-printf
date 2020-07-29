@@ -1,6 +1,7 @@
 #include "../header/ft_printf.h"
 
-t_info	*clean_flags(t_info *info)
+t_info	*
+clean_flags(t_info *info)
 {
 	info->flag[e_minus] = '0';
 	info->flag[e_plus] = '0';

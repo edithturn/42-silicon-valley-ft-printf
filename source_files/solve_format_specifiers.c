@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   eval_format_specifiers.c                           :+:      :+:    :+:   */
+/*   solve_format_specifiers.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: epuclla <epuclla@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/13 01:31:50 by epuclla           #+#    #+#             */
-/*   Updated: 2020/07/24 14:59:01 by epuclla          ###   ########.fr       */
+/*   Updated: 2020/07/28 16:14:29 by epuclla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,9 @@ t_info *solve_character(t_info *info)
 	char	c;
 
 	c = va_arg(info->ap, int);
+
+	//if(flag[minus] == 1)
+
 	//send context in a structure
 	ft_putchar(c);
 	info->format++;
@@ -26,21 +29,29 @@ t_info *solve_character(t_info *info)
 
 t_info *solve_string(t_info *info)
 {
-	//save contexs %   d ->info
-		//%0-.5s7670d
-		//0 -> 4 = new value 
-		//new value - .5 = new value 
-
-	//valida_conte -> calculation , arg
-	// print 
 	char	*str;
-
-	str = va_arg(info->ap, char *);
-
-	while(*str)
+	char	ptr;
+	char	*tmp;
+	char	space = ' ';
+	int i;
+	int	strlen;
+	
+	strlen = 0;
+	tmp = va_arg(info->ap, char *);
+	
+	str = ft_strnew(info->precision);
+	ft_strncpy(str, tmp,info->precision);
+	
+	if (info->flag[e_minus]== '1' && info->point == 1)
+		ft_putstr(str);
+	strlen = ft_strlen(str);
+	if (info->width > strlen)
 	{
-		ft_putchar(*str);
-		str++;
+		while (info->width >strlen)
+		{
+			ft_putchar(' ');
+			info->width--;
+		}
 	}
 	info->format++;
 	return (info);

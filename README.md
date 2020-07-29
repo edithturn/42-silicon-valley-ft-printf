@@ -51,11 +51,23 @@ cd /home/edith/workspace/42/ft_printf/42-silicon-valley-ft-printf/test_files
 ```
 
 ```bash
-export FNC="../source_files/ft_printf.c  ../source_files/eval_input.c  ../source_files/solve_format_specifiers.c  ../source_files/eval_context.c ../libft/ft_bzero.c  ../libft/ft_memset.c ../libft/ft_putchar.c ../libft/ft_putchar_fd.c ../libft/ft_itoa.c ../libft/ft_strdup.c ../libft/ft_putstr.c ../libft/ft_putstr_fd.c"
+export FNC="../source_files/ft_printf.c  ../source_files/eval_input.c  ../source_files/solve_format_specifiers.c  ../source_files/utils.c ../source_files/eval_context.c ../libft/ft_bzero.c  ../libft/ft_memset.c ../libft/ft_putchar.c ../libft/ft_putchar_fd.c ../libft/ft_itoa.c ../libft/ft_strdup.c ../libft/ft_putstr.c ../libft/ft_putstr_fd.c ../libft/ft_atoi.c ../libft/ft_isdigit.c   ../libft/ft_strncpy.c  ../libft/ft_memalloc.c  ../libft/ft_strnew.c ../libft/ft_strcat.c  ../libft/ft_strlen.c"
 
 gcc main.c $FNC
 ```
 
+```
+Debug mode
+gcc -g main.c $FNC
+lldb a.out
+b main
+run
+gui
+
+
+
+
+```
 
 
 - Guaradar Contexto

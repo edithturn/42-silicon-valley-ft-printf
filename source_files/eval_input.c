@@ -6,7 +6,7 @@
 /*   By: epuclla <epuclla@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/13 01:16:09 by epuclla           #+#    #+#             */
-/*   Updated: 2020/07/24 15:47:44 by epuclla          ###   ########.fr       */
+/*   Updated: 2020/07/27 15:30:01 by epuclla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,10 @@ t_info	*eval_input(t_info	*info)
 {
 	// Eval context
 	info->format++;
-	//info = set_flags(info);
+	info = set_flags(info);
+	info = set_width(info);
+	info = set_precision(info);
+	//info = set_length(info);
 	
 	//  Eval format specifier
 	if(*info->format == 'c')
