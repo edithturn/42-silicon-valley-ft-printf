@@ -6,7 +6,7 @@
 /*   By: epuclla <epuclla@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/24 14:39:18 by epuclla           #+#    #+#             */
-/*   Updated: 2020/07/27 15:32:22 by epuclla          ###   ########.fr       */
+/*   Updated: 2020/07/28 18:02:11 by epuclla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 t_info	*set_flags(t_info *info)
 {
+
+
 	clean_flags(info);
 	while(*info->format == '-' || *info->format == '+' || *info->format == ' ' || *info->format == '#' || *info->format == '0')
 	{

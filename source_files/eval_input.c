@@ -6,7 +6,7 @@
 /*   By: epuclla <epuclla@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/13 01:16:09 by epuclla           #+#    #+#             */
-/*   Updated: 2020/07/27 15:30:01 by epuclla          ###   ########.fr       */
+/*   Updated: 2020/07/28 22:36:46 by epuclla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,32 +15,35 @@
 //cspdiuxX%
 t_info	*eval_input(t_info	*info)
 {
+
+	//t_info	new_info;
 	// Eval context
 	info->format++;
 	info = set_flags(info);
 	info = set_width(info);
 	info = set_precision(info);
-	//info = set_length(info);
-	
+	int number;
+
 	//  Eval format specifier
-	if(*info->format == 'c')
-		info = solve_character(info);
-	else if (*info->format == 's')
-		info = solve_string(info);
-	else if(*info->format == 'p')
-		info = solve_pointer_void(info);
-	else if((*info->format == 'd' || *info->format == 'i') && info->indicator == 0 )
-		info = solve_decinal_integer(info);
-	else if(*info->format == 'u')
-		info = solve_unsigned_int(info);
-	else if(*info->format == 'x')
-		info =	solve_unsigned_int_lower(info);
-	else if (*info->format == 'X')
-		info = solve_unsigned_int_upper(info);
-	else if (*info->format == '%')
-		info = solve_percent_sign(info);
-	else
-		ft_putchar('V');
+	//convert to inst to my info->format
+	if (*info->format == 'c')
+		number = e_char;
+	if (*info->format == 's')
+		number = e_char;
+	
+	eval_function	*my_array[e_lenght] = {
+		[e_char] = &solve_character,
+		[e_string] = &solve_string,
+		[e_decimal_int] = &solve_decinal_integer,
+		[e_pointer_void] = &solve_pointer_void,
+		[e_decimal_int] = &solve_decinal_integer,
+		[e_u_int] = &solve_unsigned_int,
+		[e_u_int_lower] = &solve_unsigned_int_lower,
+		[e_u_int_upper] = &solve_unsigned_int_upper,
+		[e_percent_sign] = &solve_percent_sign,
+	};
+
+	info = my_array[number](info);
 
 	return (info);
 }

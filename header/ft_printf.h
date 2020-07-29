@@ -7,6 +7,7 @@
 
 int ft_printf(const char *format, ...);
 
+// Enum for Flags
 enum e_flags
 { 
     e_minus,
@@ -14,6 +15,21 @@ enum e_flags
 	e_space,
 	e_hash,
 	e_zero
+};
+
+
+// Enum for Distpach table
+enum e_dispatch
+{ 
+    e_char,
+	e_string,
+	e_pointer_void,
+	e_decimal_int,
+	e_u_int,
+	e_u_int_lower,
+	e_u_int_upper,
+	e_percent_sign,
+	e_lenght
 };
 
 typedef	struct		s_info
@@ -43,6 +59,9 @@ t_info *solve_unsigned_int_lower(t_info *info);
 t_info *solve_unsigned_int_upper(t_info *info);
 t_info *solve_percent_sign(t_info *info);
 
+
+// Dispatcher
+typedef t_info *eval_function(t_info *info);
 
 // eval_context
 t_info	*set_flags(t_info *info);
