@@ -40,9 +40,9 @@ int main()
 
 
 	// String
-	//ft_printf("My %-2s P\n", 4, "Edith");
+	ft_printf("My ega is %s", "edith");
 
-	char *s = "Edith";
+	//char *s = "Edith";
 	//printf("%-5s\n", s);
 	//printf("%-3d|\n", 10);
 	//printf("%-*.4d|", 3, 10);
