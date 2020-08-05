@@ -1,33 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_test_s.c                                      :+:      :+:    :+:   */
+/*   solve_unsigned_hexadecimal_integer.c               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: epuclla <epuclla@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/11 01:07:37 by epuclla           #+#    #+#             */
-/*   Updated: 2020/08/05 00:42:55 by epuclla          ###   ########.fr       */
+/*   Created: 2020/08/04 19:10:21 by epuclla           #+#    #+#             */
+/*   Updated: 2020/08/05 00:22:58 by epuclla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/ft_printf.h"
 
-int main()
+void	solve_unsigned_hexadecimal_integer(t_info *info)
 {
-	//No Flag
-	/*ft_printf("%s|01|\n", "Puclla");
-	printf("%s|01|\n", "Puclla");*/
+	// aplicar contexto
+	char  *n;
+	n = ft_itoa(va_arg(info->ap, long long));
 
-	//[-] Flag
-	/*ft_printf("%-40s|01|\n", "Puclla");
-	printf("%-40s|01|\n", "Puclla");*/
-
-	/*
-	ft_printf("%-75.10s|\n", "EdithEdithEdithEdith");
-	printf("%-75.10s|\n", "EdithEdithEdithEdith"); */
-
-	ft_printf("%-*.10s|\n", 75, "EdithEdithEdithEdith");
-	printf("%-*.10s|\n", 75, "EdithEdithEdithEdith"); 
-
-	return (0);
+	while(*n)
+	{
+		ft_putchar(*n);
+		n++;
+	}
+	info->format++;
 }

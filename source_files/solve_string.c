@@ -6,7 +6,7 @@
 /*   By: epuclla <epuclla@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/29 00:20:59 by epuclla           #+#    #+#             */
-/*   Updated: 2020/08/04 18:48:09 by epuclla          ###   ########.fr       */
+/*   Updated: 2020/08/05 00:22:50 by epuclla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,4 @@ void	solve_string(t_info *info)
 		}
 	}
 	info->format++;
-	//return (info);
 }

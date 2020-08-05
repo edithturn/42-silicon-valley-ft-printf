@@ -1,33 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_test_s.c                                      :+:      :+:    :+:   */
+/*   solve_character.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: epuclla <epuclla@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/11 01:07:37 by epuclla           #+#    #+#             */
-/*   Updated: 2020/08/05 00:42:55 by epuclla          ###   ########.fr       */
+/*   Created: 2020/08/04 19:05:50 by epuclla           #+#    #+#             */
+/*   Updated: 2020/08/05 00:22:22 by epuclla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/ft_printf.h"
 
-int main()
+void	solve_character(t_info *info)
 {
-	//No Flag
-	/*ft_printf("%s|01|\n", "Puclla");
-	printf("%s|01|\n", "Puclla");*/
+	char	c;
 
-	//[-] Flag
-	/*ft_printf("%-40s|01|\n", "Puclla");
-	printf("%-40s|01|\n", "Puclla");*/
+	c = va_arg(info->ap, int);
 
-	/*
-	ft_printf("%-75.10s|\n", "EdithEdithEdithEdith");
-	printf("%-75.10s|\n", "EdithEdithEdithEdith"); */
+	//if(flag[minus] == 1)
 
-	ft_printf("%-*.10s|\n", 75, "EdithEdithEdithEdith");
-	printf("%-*.10s|\n", 75, "EdithEdithEdithEdith"); 
-
-	return (0);
+	//send context in a structure
+	ft_putchar(c);
+	info->format++;
 }

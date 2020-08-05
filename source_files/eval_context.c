@@ -6,7 +6,7 @@
 /*   By: epuclla <epuclla@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/24 14:39:18 by epuclla           #+#    #+#             */
-/*   Updated: 2020/08/04 18:38:04 by epuclla          ###   ########.fr       */
+/*   Updated: 2020/08/05 00:21:55 by epuclla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ void	set_flags(t_info *info)
 			info->flag[e_zero] = '1';
 		*info->format++;
 		}
-		//return (info);
 }
 
 void	set_width(t_info *info)
@@ -46,7 +45,6 @@ void	set_width(t_info *info)
 		info->width = ft_atoi(info->format);
 	while(*info->format >= '0' && *info ->format <= '9')
 			info->format++;
-	//return (info);
 }
 
 void	set_precision(t_info *info)
@@ -62,11 +60,4 @@ void	set_precision(t_info *info)
 		info->precision = ft_atoi(info->format);
 	while(*info->format >= '0' && *info->format<= '9')
 		info->format++;
-	//return (info);
 }
-
-/*t_info *set_length(t_info *info)
-{
-	
-}*/
-

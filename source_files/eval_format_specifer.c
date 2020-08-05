@@ -6,7 +6,7 @@
 /*   By: epuclla <epuclla@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/29 00:31:21 by epuclla           #+#    #+#             */
-/*   Updated: 2020/08/04 18:56:16 by epuclla          ###   ########.fr       */
+/*   Updated: 2020/08/05 00:22:10 by epuclla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,4 @@ void	eval_input(t_info	*info)
 
 	//Use my dispatch table
 	format_specifiers_array[number](info);
-
-	//return (info);
 }

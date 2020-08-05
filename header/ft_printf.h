@@ -69,6 +69,7 @@ void	set_flags(t_info *info);
 void	set_width(t_info *info);
 void	set_precision(t_info *info);
 void	set_length(t_info *info);
+
 //util
 void	clean_flags(t_info *info);
 
