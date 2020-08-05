@@ -6,13 +6,13 @@
 /*   By: epuclla <epuclla@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/13 01:31:50 by epuclla           #+#    #+#             */
-/*   Updated: 2020/08/04 18:19:37 by epuclla          ###   ########.fr       */
+/*   Updated: 2020/08/04 18:48:04 by epuclla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/ft_printf.h"
 
-void	*solve_character(t_info *info)
+void	solve_character(t_info *info)
 {
 	char	c;
 
@@ -26,7 +26,7 @@ void	*solve_character(t_info *info)
 	//return (info);
 }
 
-void	*solve_pointer(t_info *info)
+void	solve_pointer(t_info *info)
 {
 	unsigned	long	long	p;
 
@@ -40,7 +40,7 @@ void	*solve_pointer(t_info *info)
 	//return (info);
 }
 
-void	*solve_decimal_integer(t_info *info)
+void	solve_decimal_integer(t_info *info)
 {
 	char  *n;
 	n = ft_itoa(va_arg(info->ap, long long));
@@ -53,7 +53,7 @@ void	*solve_decimal_integer(t_info *info)
 	//return (info);
 }
 
-void	*solve_unsigned_decimal_integer(t_info *info)
+void	solve_unsigned_decimal_integer(t_info *info)
 {
 	char  *n;
 	n = ft_itoa(va_arg(info->ap, long long));
@@ -66,7 +66,7 @@ void	*solve_unsigned_decimal_integer(t_info *info)
 	//return (info);
 }
 
-void	*solve_unsigned_hexadecimal_integer(t_info *info)
+void	solve_unsigned_hexadecimal_integer(t_info *info)
 {
 	// aplicar contexto
 	char  *n;
@@ -81,7 +81,7 @@ void	*solve_unsigned_hexadecimal_integer(t_info *info)
 	//return (info);
 }
 
-void	*solve_percent_sign(t_info *info)
+void	solve_percent_sign(t_info *info)
 {
 	char	per;
 	per = '%';

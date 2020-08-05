@@ -5,7 +5,7 @@
 # include <stdlib.h>
 # include <stdarg.h>
 
-int ft_printf(const char *format, ...);
+int	ft_printf(const char *format, ...);
 
 // Enum for Flags
 enum e_flags
@@ -16,8 +16,6 @@ enum e_flags
 	e_hash,
 	e_zero
 };
-
-
 // Enum for Distpach table
 //cspdiuxX%
 enum e_dispatch
@@ -29,7 +27,7 @@ enum e_dispatch
 	e_u_dec_int,
 	e_u_hex_int,
 	e_percentage,
-	e_lenght
+	e_length
 };
 
 typedef	struct		s_info
@@ -53,18 +51,18 @@ void	eval_input(t_info	*info);
 
 // Funcions conversors
 //cspdiuxX%
-void *solve_character(t_info *info);
-void *solve_string(t_info *info);
-void *solve_pointer(t_info *info);
-void *solve_decimal_integer(t_info *info);
-void *solve_unsigned_decimal_integer(t_info *info);
-void *solve_unsigned_hexadecimal_integer(t_info *info);
-void *solve_percent_sign(t_info *info);
+void	solve_character(t_info *info);
+void	solve_string(t_info *info);
+void	solve_pointer(t_info *info);
+void	solve_decimal_integer(t_info *info);
+void	solve_unsigned_decimal_integer(t_info *info);
+void	solve_unsigned_hexadecimal_integer(t_info *info);
+void	solve_percent_sign(t_info *info);
 
 
 
 // Dispatcher
-typedef	void *eval_format_specifiers(t_info *info);
+typedef	void eval_format_specifiers(t_info *info);
 
 // eval_context
 void	set_flags(t_info *info);
