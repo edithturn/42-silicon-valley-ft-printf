@@ -5,21 +5,21 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: epuclla <epuclla@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/13 01:16:09 by epuclla           #+#    #+#             */
-/*   Updated: 2020/07/29 00:00:17 by epuclla          ###   ########.fr       */
+/*   Created: 2020/07/29 00:31:21 by epuclla           #+#    #+#             */
+/*   Updated: 2020/08/04 18:10:05 by epuclla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/ft_printf.h"
 
 //cspdiuxX%
-t_info	*eval_input(t_info	*info)
+void	eval_input(t_info	*info)
 {
 
 	info->format++;
-	info = set_flags(info);
-	info = set_width(info);
-	info = set_precision(info);
+	set_flags(info);
+	set_width(info);
+	set_precision(info);
 	int number;
 
 	number = 0;
@@ -50,7 +50,7 @@ t_info	*eval_input(t_info	*info)
 	};
 
 	//Use my dispatch table
-	info = format_specifiers_array[number](info);
+	format_specifiers_array[number](info);
 
-	return (info);
+	//return (info);
 }

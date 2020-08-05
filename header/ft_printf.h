@@ -45,31 +45,33 @@ typedef	struct		s_info
 	int			point;
 }					t_info;
 
+//
 
 // eval_input
-t_info	*eval_input(t_info	*info);
+void	eval_input(t_info	*info);
+
 
 // Funcions conversors
 //cspdiuxX%
-t_info *solve_character(t_info *info);
-t_info *solve_string(t_info *info);
-t_info *solve_pointer(t_info *info);
-t_info *solve_decimal_integer(t_info *info);
-t_info *solve_unsigned_decimal_integer(t_info *info);
-t_info *solve_unsigned_hexadecimal_integer(t_info *info);
-t_info *solve_percent_sign(t_info *info);
+void *solve_character(t_info *info);
+void *solve_string(t_info *info);
+void *solve_pointer(t_info *info);
+void *solve_decimal_integer(t_info *info);
+void *solve_unsigned_decimal_integer(t_info *info);
+void *solve_unsigned_hexadecimal_integer(t_info *info);
+void *solve_percent_sign(t_info *info);
 
 
 
 // Dispatcher
-typedef t_info *eval_format_specifiers(t_info *info);
+typedef	void *eval_format_specifiers(t_info *info);
 
 // eval_context
-t_info	*set_flags(t_info *info);
-t_info	*set_width(t_info *info);
-t_info *set_precision(t_info *info);
-t_info *set_length(t_info *info);
+void	set_flags(t_info *info);
+void	set_width(t_info *info);
+void	set_precision(t_info *info);
+void	set_length(t_info *info);
 //util
-t_info	*clean_flags(t_info *info);
+void	clean_flags(t_info *info);
 
 #endif

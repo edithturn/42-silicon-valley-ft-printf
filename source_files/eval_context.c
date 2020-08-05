@@ -6,20 +6,17 @@
 /*   By: epuclla <epuclla@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/24 14:39:18 by epuclla           #+#    #+#             */
-/*   Updated: 2020/07/28 18:02:11 by epuclla          ###   ########.fr       */
+/*   Updated: 2020/08/04 14:59:30 by epuclla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/ft_printf.h"
 
-t_info	*set_flags(t_info *info)
+void	set_flags(t_info *info)
 {
-
-
 	clean_flags(info);
 	while(*info->format == '-' || *info->format == '+' || *info->format == ' ' || *info->format == '#' || *info->format == '0')
 	{
-
 		if(*info->format == '-')
 			info->flag[e_minus] = '1';
 		if(*info->format == '+')
@@ -32,10 +29,10 @@ t_info	*set_flags(t_info *info)
 			info->flag[e_zero] = '1';
 		*info->format++;
 		}
-		return (info);
+		//return (info);
 }
 
-t_info	*set_width(t_info *info)
+void	set_width(t_info *info)
 {
 	//clean_width(info);
 	info->width = 0;
@@ -45,16 +42,14 @@ t_info	*set_width(t_info *info)
 		info->width = va_arg(info->ap, int);
 		info->format++;
 	}
+	if (*info->format >= '0' && *info->format <= '9')
+		info->width = ft_atoi(info->format);
 	while(*info->format >= '0' && *info ->format <= '9')
-	{
-		if (*info->format >= '0' && *info->format <= '9')
-			info->width = ft_atoi(info->format);
-		info->format++;
-	}	
-	return (info);
+			info->format++;
+	//return (info);
 }
 
-t_info *set_precision(t_info *info)
+void	set_precision(t_info *info)
 {
 	info->precision = 0;
 	info->point = 0;
@@ -67,7 +62,7 @@ t_info *set_precision(t_info *info)
 		info->precision = ft_atoi(info->format);
 	while(*info->format >= '0' && *info->format<= '9')
 		info->format++;
-	return (info);
+	//return (info);
 }
 
 /*t_info *set_length(t_info *info)

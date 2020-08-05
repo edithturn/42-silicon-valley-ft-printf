@@ -6,7 +6,7 @@
 /*   By: epuclla <epuclla@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/12 23:06:51 by epuclla           #+#    #+#             */
-/*   Updated: 2020/07/24 14:56:21 by epuclla          ###   ########.fr       */
+/*   Updated: 2020/08/04 15:07:01 by epuclla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,13 @@
 //cspdiuxX%
 int ft_printf(const char *format, ...)
 {
+	//Declaring variables
 	t_info	*info;
 	int length;
 
+	//Initializing my variables
 	info = (t_info *)ft_memalloc(sizeof(t_info));
+
 	va_start(info->ap, format);
 	info->format = format;
 	while(*info->format)
@@ -33,7 +36,7 @@ int ft_printf(const char *format, ...)
 		if(*info->format && *info->format == '%')
 		{
 			//printf(" This: %d", va_arg(info->ap, int));
-			info = eval_input(info);
+			eval_input(info);
 		}
 	}
 	va_end(info->ap);

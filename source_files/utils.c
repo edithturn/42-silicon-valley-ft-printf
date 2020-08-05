@@ -1,7 +1,6 @@
 #include "../header/ft_printf.h"
 
-t_info	*
-clean_flags(t_info *info)
+void	clean_flags(t_info *info)
 {
 	info->flag[e_minus] = '0';
 	info->flag[e_plus] = '0';
@@ -9,5 +8,5 @@ clean_flags(t_info *info)
 	info->flag[e_hash] = '0';
 	info->flag[e_zero] = '0';
 
-	return (info);
+	//return (info);
 }
