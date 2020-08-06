@@ -76,3 +76,16 @@ gui
 - Mandar a procesar toda la estructura del contexto
 -https://stackoverflow.com/questions/48066271/how-to-print-a-pointer-address-without-printf
 - 
+
+
+# Testers
+- https://github.com/Kwevan/PRINTF_TESTER
+- https://github.com/Mazoise/42TESTERS-PRINTF
+- https://github.com/gavinfielder/pft
+- https://github.com/charMstr/printf_lover_v2
+
+
+
+SOURCES	= ft_printf.c  eval_format_specifer.c  solve_string.c utils.c eval_context.c solve_character.c \
+					solve_decimal_integer.c solve_percent_sign.c solve_pointer.c solve_unsigned_decimal_integer.c \
+					solve_unsigned_hexadecimal_integer.c

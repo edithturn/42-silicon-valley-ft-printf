@@ -6,11 +6,11 @@
 /*   By: epuclla <epuclla@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/12 23:06:51 by epuclla           #+#    #+#             */
-/*   Updated: 2020/08/04 15:07:01 by epuclla          ###   ########.fr       */
+/*   Updated: 2020/08/06 06:07:44 by epuclla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../header/ft_printf.h"
+#include "ft_printf.h"
 
 //cspdiuxX%
 int ft_printf(const char *format, ...)

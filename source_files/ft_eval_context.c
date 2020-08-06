@@ -6,11 +6,11 @@
 /*   By: epuclla <epuclla@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/24 14:39:18 by epuclla           #+#    #+#             */
-/*   Updated: 2020/08/05 00:21:55 by epuclla          ###   ########.fr       */
+/*   Updated: 2020/08/06 06:06:27 by epuclla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../header/ft_printf.h"
+#include "ft_printf.h"
 
 void	set_flags(t_info *info)
 {
@@ -19,16 +19,18 @@ void	set_flags(t_info *info)
 	{
 		if(*info->format == '-')
 			info->flag[e_minus] = '1';
-		if(*info->format == '+')
+		else if(*info->format == '+')
 			info->flag[e_plus] = '1';
-		if(*info->format == ' ')
+		else if(*info->format == ' ')
 			info->flag[e_space] = '1';
-		if(*info->format == '#')
+		else if(*info->format == '#')
 			info->flag[e_hash] = '1';
-		if (*info->format == '0')
+		else if (*info->format == '0')
 			info->flag[e_zero] = '1';
-		*info->format++;
+		else
+			write(1, "Error", 6);
 		}
+	info->format++;
 }
 
 void	set_width(t_info *info)
