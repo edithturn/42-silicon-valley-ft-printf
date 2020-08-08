@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_test_s.c                                      :+:      :+:    :+:   */
+/*   main_test_c.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: epuclla <epuclla@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/11 01:07:37 by epuclla           #+#    #+#             */
-/*   Updated: 2020/08/06 17:21:47 by epuclla          ###   ########.fr       */
+/*   Created: 2020/08/06 16:16:39 by epuclla           #+#    #+#             */
+/*   Updated: 2020/08/06 17:05:25 by epuclla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,21 +16,17 @@ int main()
 {
 	system("clear");
 
-	//No Flag
-	/*ft_printf("%s|01|\n", "Puclla");
-	printf("%s|01|\n", "Puclla");*/
+	ft_printf("%c|\n",'E');
+	ft_printf("%*c|\n",5,'E');
+	ft_printf("%-4c|\n", 'E');
+	ft_printf("%3c|\n", 'E');
+	
+	ft_printf("%s\n", "PRINTF");
 
-	//[-] Flag
-	/*ft_printf("%-40s|01|\n", "Puclla");
-	printf("%-40s|01|\n", "Puclla");*/
-
-	//width and precision
-	/*ft_printf("%-75.10s|\n", "EdithEdithEdithEdith");
-	printf("%-75.10s|\n", "EdithEdithEdithEdith");*/
-
-	//parameters
-	ft_printf("%-*.*s|\n",8, 4, "Edit");
-	printf("%-*.*s|\n",8, 4,"Edit");
-
+	printf("%c|\n", 'E');
+	printf("%*c|\n",5,'E');
+	printf("%-4c|\n",'E');
+	printf("%3c|\n", 'E');
+	
 	return (0);
 }
