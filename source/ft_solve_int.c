@@ -6,7 +6,7 @@
 /*   By: epuclla <epuclla@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/04 19:09:25 by epuclla           #+#    #+#             */
-/*   Updated: 2020/08/15 00:37:40 by epuclla          ###   ########.fr       */
+/*   Updated: 2020/08/15 02:07:32 by epuclla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,20 @@ void	ft_solve_int(t_info *info)
 			info->width--;
 		}
 		ft_putchar('+');
+	}*/
+
+	// TODO: Should show ERROR
+	if (info->flag[e_zero] == '1' && info->flag[e_minus]  == '1' )
+		return ;
+	/*else
+	{
+		strlen = ft_strlen(tmp);
+		while (info->width > strlen)
+		{
+			ft_putchar(' ');
+			info->width--;
+		}
+		ft_putstr(tmp);
 	}*/
 
 	n = ft_itoa(va_arg(info->arguments, long long));

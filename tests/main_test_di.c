@@ -6,7 +6,7 @@
 /*   By: epuclla <epuclla@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/10 08:38:06 by epuclla           #+#    #+#             */
-/*   Updated: 2020/08/15 01:42:44 by epuclla          ###   ########.fr       */
+/*   Updated: 2020/08/15 03:01:56 by epuclla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,11 @@ int main()
     int    n1;
 
 	n1 = 2;
-    ft_printf("Total Length:(ft_printf) %d\n\n", ft_printf("|%-2d|\n", n1));
-    printf("Total Length:(printf) %d\n\n", printf("|%-2d|\n", n1));
+    ft_printf("Total Length:(ft_printf) %d\n", ft_printf("|%-2d|\n", n1));
+    printf("Total Length:(printf) %d\n\n\n", printf("|%-2d|\n", n1));
 
-
+	//ft_printf("Total Length:(ft_printf) %d\n", ft_printf("|%-02d|\n", n1));
+    printf("Total Length:(printf) %d\n\n", printf("|%-02d|\n", n1));
 
 
 	//printf("\n%s\n", "ft_printf");
