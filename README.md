@@ -14,6 +14,12 @@ gcc  ./test/main_test_c.c libftprintf.a  -I ./source/
 ```
 
 ### Debug  Mode
+
+- First: Change your Makefile, adding -g3
+```c
+	@$(CC) -g3 $(CFLAGS) $(SRCS) -I$(INCLUDES)
+```
+Then execute:
 ```c
 cd {$HOME}/42-silicon-valley-ft-printf
 make all

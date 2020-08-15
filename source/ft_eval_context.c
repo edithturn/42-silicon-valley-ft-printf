@@ -6,7 +6,7 @@
 /*   By: epuclla <epuclla@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/24 14:39:18 by epuclla           #+#    #+#             */
-/*   Updated: 2020/08/14 19:45:30 by epuclla          ###   ########.fr       */
+/*   Updated: 2020/08/14 21:48:17 by epuclla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,23 +15,16 @@
 void	set_flags(t_info *info)
 {
 	clean_flags(info);
-	while(*info->format == '-' || *info->format == '0' || *info->format == '.'  || *info->format == '*')
+	while(*info->format == '-' || *info->format == '0')
 	{
 		if(*info->format == '-')
 			info->flag[e_minus] = '1';
-		else if(*info->format == '+')
-			info->flag[e_plus] = '1';
-		else if(*info->format == ' ')
-			info->flag[e_space] = '1';
-		else if(*info->format == '#')
-			info->flag[e_hash] = '1';
 		else if (*info->format == '0')
 			info->flag[e_zero] = '1';
 		else
 			write(1, "Error", 6);
 		info->format++;
 		}
-	
 }
 
 void	set_width(t_info *info)
