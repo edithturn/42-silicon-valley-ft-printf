@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   eval_format_specifer.c                             :+:      :+:    :+:   */
+/*   ft_eval_input.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: epuclla <epuclla@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/29 00:31:21 by epuclla           #+#    #+#             */
-/*   Updated: 2020/08/06 06:06:37 by epuclla          ###   ########.fr       */
+/*   Updated: 2020/08/14 20:33:19 by epuclla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
 //cspdiuxX%
-void	eval_input(t_info	*info)
+void	ft_eval_input(t_info	*info)
 {
 
 	info->format++;
@@ -25,30 +25,33 @@ void	eval_input(t_info	*info)
 	number = 0;
 	if (*info->format == 'c')
 		number = e_char;
-	if (*info->format == 's')
+	else if (*info->format == 's')
 		number = e_string;
-	if (*info->format == 'p')
+	else if (*info->format == 'p')
 		number = e_pointer;
-	if (*info->format == 'd' || *info->format == 'i')
+	else if (*info->format == 'd' || *info->format == 'i')
 		number = e_decimal_int;
-	if (*info->format == 'u')
+	else if (*info->format == 'u')
 		number = e_u_dec_int;
-	if (*info->format == 'x' || *info->format == 'X')
+	else if (*info->format == 'x' || *info->format == 'X')
 		number = e_u_hex_int;
-	if (*info->format == '%')
+	else if (*info->format == '%')
 		number = e_percentage;
-
+	else
+		write(1, "Error", 5);
+	
 	//Dispatch table
-	eval_format_specifiers	*format_specifiers_array[e_length] = {
-		[e_char] = solve_character,
-		[e_string] = solve_string,
-		[e_pointer] = solve_pointer,
-		[e_decimal_int] = solve_decimal_integer,
-		[e_u_dec_int] = solve_unsigned_decimal_integer,
-		[e_u_hex_int] = solve_unsigned_hexadecimal_integer,
-		[e_percentage] = solve_percent_sign,
+	eval_format_specifiers	*functions_array[e_length] = {
+		[e_char] = ft_solve_char,
+		[e_string] = ft_solve_string,
+		[e_pointer] = ft_solve_pointer,
+		[e_decimal_int] = ft_solve_int,
+		[e_u_dec_int] = ft_solve_uint,
+		[e_u_hex_int] = ft_solve_hex,
+		[e_percentage] = ft_solve_percent,
 	};
 
 	//Use my dispatch table
-	format_specifiers_array[number](info);
+	//eval_format_specifiers *format_specifiers_array;
+	functions_array[number](info);
 }

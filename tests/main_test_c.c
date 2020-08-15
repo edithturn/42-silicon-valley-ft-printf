@@ -1,25 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   solve_unsigned_decimal_integer.c                   :+:      :+:    :+:   */
+/*   main_test_c.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: epuclla <epuclla@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/08/04 19:10:02 by epuclla           #+#    #+#             */
-/*   Updated: 2020/08/06 06:08:07 by epuclla          ###   ########.fr       */
+/*   Created: 2020/08/06 16:16:39 by epuclla           #+#    #+#             */
+/*   Updated: 2020/08/14 20:31:39 by epuclla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../source/ft_printf.h"
 
-void	solve_unsigned_decimal_integer(t_info *info)
+int main()
 {
-	char  *n;
-	n = ft_itoa(va_arg(info->ap, long long));
-	while(*n)
-	{
-		ft_putchar(*n);
-		n++;
-	}
-	info->format++;
+	//system("clear");
+
+	ft_printf("%c|\n",'E');
+	ft_printf("%*c|\n",5,'E');
+	ft_printf("%-4c|\n", 'E');
+	ft_printf("%3c|\n", 'E');
+	ft_printf("%c|\n",'E');
+	
+	/*printf("\n%s\n", "PRINTF");
+
+	printf("%c|\n", 'E');
+	printf("%*c|\n",5,'E');
+	printf("%-4c|\n",'E');
+	printf("%3c|\n", 'E');
+	printf("%-c|\n",'E');*/
+	
+	return (0);
 }

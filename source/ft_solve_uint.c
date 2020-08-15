@@ -1,23 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   solve_unsigned_hexadecimal_integer.c               :+:      :+:    :+:   */
+/*   ft_solve_uint.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: epuclla <epuclla@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/08/04 19:10:21 by epuclla           #+#    #+#             */
-/*   Updated: 2020/08/06 06:08:10 by epuclla          ###   ########.fr       */
+/*   Created: 2020/08/04 19:10:02 by epuclla           #+#    #+#             */
+/*   Updated: 2020/08/14 19:51:10 by epuclla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	solve_unsigned_hexadecimal_integer(t_info *info)
+void	ft_solve_uint(t_info *info)
 {
-	// aplicar contexto
 	char  *n;
-	n = ft_itoa(va_arg(info->ap, long long));
-
+	n = ft_itoa(va_arg(info->arguments, long long));
 	while(*n)
 	{
 		ft_putchar(*n);

@@ -1,32 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_test_c.c                                      :+:      :+:    :+:   */
+/*   ft_solve_percent.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: epuclla <epuclla@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/08/06 16:16:39 by epuclla           #+#    #+#             */
-/*   Updated: 2020/08/06 17:05:25 by epuclla          ###   ########.fr       */
+/*   Created: 2020/08/04 19:10:59 by epuclla           #+#    #+#             */
+/*   Updated: 2020/08/14 19:50:55 by epuclla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../source_files/ft_printf.h"
+#include "ft_printf.h"
 
-int main()
+void	ft_solve_percent(t_info *info)
 {
-	system("clear");
-
-	ft_printf("%c|\n",'E');
-	ft_printf("%*c|\n",5,'E');
-	ft_printf("%-4c|\n", 'E');
-	ft_printf("%3c|\n", 'E');
-	
-	ft_printf("%s\n", "PRINTF");
-
-	printf("%c|\n", 'E');
-	printf("%*c|\n",5,'E');
-	printf("%-4c|\n",'E');
-	printf("%3c|\n", 'E');
-	
-	return (0);
+	char	per;
+	per = '%';
+	ft_putchar(per);
+	info->format++;	
 }

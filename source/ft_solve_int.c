@@ -1,24 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   ft_solve_int.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: epuclla <epuclla@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/08/06 06:08:21 by epuclla           #+#    #+#             */
-/*   Updated: 2020/08/06 06:08:24 by epuclla          ###   ########.fr       */
+/*   Created: 2020/08/04 19:09:25 by epuclla           #+#    #+#             */
+/*   Updated: 2020/08/14 19:50:51 by epuclla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	clean_flags(t_info *info)
+void	ft_solve_int(t_info *info)
 {
-	info->flag[e_minus] = '0';
-	info->flag[e_plus] = '0';
-	info->flag[e_space] = '0';
-	info->flag[e_hash] = '0';
-	info->flag[e_zero] = '0';
+	char  *n;
+	//char	*str;
 
-	//return (info);
+	//str = ft_strnew(info->width);
+	if (info->flag[e_plus] == '1')
+	{
+		while (info->width)
+		{
+			ft_putchar(' ');
+			info->width--;
+		}
+		ft_putchar('+');
+	}
+	n = ft_itoa(va_arg(info->arguments, long long));
+	while(*n)
+	{
+		ft_putchar(*n);
+		n++;
+	}
+
+
+
+	info->format++;
 }

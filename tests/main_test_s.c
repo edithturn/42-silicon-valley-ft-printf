@@ -6,11 +6,11 @@
 /*   By: epuclla <epuclla@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/11 01:07:37 by epuclla           #+#    #+#             */
-/*   Updated: 2020/08/06 17:21:47 by epuclla          ###   ########.fr       */
+/*   Updated: 2020/08/14 20:31:51 by epuclla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../source_files/ft_printf.h"
+#include "../source/ft_printf.h"
 
 int main()
 {
@@ -29,8 +29,10 @@ int main()
 	printf("%-75.10s|\n", "EdithEdithEdithEdith");*/
 
 	//parameters
-	ft_printf("%-*.*s|\n",8, 4, "Edit");
-	printf("%-*.*s|\n",8, 4,"Edit");
+	//ft_printf("%-*.*s|\n",8, 4, "Edit");
+	//printf("%-*.*s|\n",8, 4,"Edit");
 
+	ft_printf("%3s|\n","Edith");
+	//printf("%8s|\n","Edith");
 	return (0);
 }

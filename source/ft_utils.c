@@ -1,25 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   solve_decimal_integer.c                            :+:      :+:    :+:   */
+/*   ft_utils.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: epuclla <epuclla@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/08/04 19:09:25 by epuclla           #+#    #+#             */
-/*   Updated: 2020/08/06 06:07:53 by epuclla          ###   ########.fr       */
+/*   Created: 2020/08/06 06:08:21 by epuclla           #+#    #+#             */
+/*   Updated: 2020/08/14 20:02:22 by epuclla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	solve_decimal_integer(t_info *info)
+void	clean_flags(t_info *info)
 {
-	char  *n;
-	n = ft_itoa(va_arg(info->ap, long long));
-	while(*n)
-	{
-		ft_putchar(*n);
-		n++;
-	}
-	info->format++;
+	info->flag[e_minus] = '0';
+	info->flag[e_plus] = '0';
+	info->flag[e_space] = '0';
+	info->flag[e_hash] = '0';
+	info->flag[e_zero] = '0';
+
+	//return (info);
 }

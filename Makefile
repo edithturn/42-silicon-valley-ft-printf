@@ -6,7 +6,7 @@
 #    By: epuclla <epuclla@student.42.us.org>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/08/05 14:00:10 by epuclla           #+#    #+#              #
-#    Updated: 2020/08/06 07:33:50 by epuclla          ###   ########.fr        #
+#    Updated: 2020/08/14 19:43:41 by epuclla          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,17 +14,18 @@ CC = gcc
 NAME = libftprintf.a
 CFLAGS = -Wall -Wextra -Werror -c
 
-SRCS=./libft/ft*.c ./source_files/ft*.c ./source_files/solve*.c
+SRCS=./libft/ft*.c ./source/ft*.c
 
-OBJECTS=ft*.o solve*.o
+OBJECTS=ft*.o
 LIB_PATH = ./libft
-INCLUDES=./
+INCLUDES=./source
 
 all:$(NAME)
 
 $(NAME):
-	@$(CC) $(CFLAGS) -c $(SRCS) -I$(INCLUDES) 
-	@ar rc $(NAME) $(OBJECTS)
+	@make re -C $(LIB_PATH)
+	@$(CC) -g3 $(CFLAGS) $(SRCS) -I$(INCLUDES)
+	@ar rc $(NAME) $(OBJECTS) $(LIB_PATH)/*.o
 	@ranlib $(NAME)
 
 bonus: re
@@ -39,4 +40,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY:		all clean fclean re
+.PHONY:	all clean fclean re

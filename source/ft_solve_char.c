@@ -1,39 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   solve_string.c                                     :+:      :+:    :+:   */
+/*   ft_solve_char.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: epuclla <epuclla@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/29 00:20:59 by epuclla           #+#    #+#             */
-/*   Updated: 2020/08/06 06:08:04 by epuclla          ###   ########.fr       */
+/*   Created: 2020/08/04 19:05:50 by epuclla           #+#    #+#             */
+/*   Updated: 2020/08/14 20:02:51 by epuclla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	solve_string(t_info *info)
+void	ft_solve_char(t_info *info)
 {
-	char	*str;
-	char	*tmp;
-	int	strlen;
-	
-	strlen = 0;
-	tmp = va_arg(info->ap, char *);
-	
-	str = ft_strnew(info->precision);
-	ft_strncpy(str, tmp,info->precision);
-	
-	if (info->flag[e_minus]== '1' && info->point == 1)
-		ft_putstr(str);
-	strlen = ft_strlen(str);
-	if (info->width > strlen)
+	char	c;
+
+	c = va_arg(info->arguments, int);
+
+	if (info->flag[e_minus] == '1')
+		ft_putchar(c);
+
+	// If weidth
+	if (info->width > 1)
 	{
-		while (info->width >strlen)
-		{
-			ft_putchar(' ');
-			info->width--;
-		}
+		if (info->flag [e_zero] == '1' )
+			while (info->width > 1)
+			{
+				ft_putchar('0');
+				info->width--;
+			}
+		else
+			while(info->width > 1)
+			{
+				ft_putchar(' ');
+				info->width--;
+			}
 	}
+
+	if (info->flag[e_minus] != '1')
+		ft_putchar(c);	
 	info->format++;
 }

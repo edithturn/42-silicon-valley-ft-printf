@@ -32,12 +32,12 @@ enum e_dispatch
 
 typedef	struct		s_info
 {
-	va_list		ap;
+	va_list		arguments;
 	int			length_int;
 	const char	*format;
 	int			width;
 	int			precision;
-	char		flag[5];
+	char		flag[5];  
 	char		length_char[5];
 	int			indicator;
 	int			point;
@@ -46,18 +46,18 @@ typedef	struct		s_info
 //
 
 // eval_input
-void	eval_input(t_info	*info);
+void	ft_eval_input(t_info	*info);
 
 
 // Funcions conversors
 //cspdiuxX%
-void	solve_character(t_info *info);
-void	solve_string(t_info *info);
-void	solve_pointer(t_info *info);
-void	solve_decimal_integer(t_info *info);
-void	solve_unsigned_decimal_integer(t_info *info);
-void	solve_unsigned_hexadecimal_integer(t_info *info);
-void	solve_percent_sign(t_info *info);
+void	ft_solve_char(t_info *info);
+void	ft_solve_string(t_info *info);
+void	ft_solve_pointer(t_info *info);
+void	ft_solve_int(t_info *info);
+void	ft_solve_uint(t_info *info);
+void	ft_solve_hex(t_info *info);
+void	ft_solve_percent(t_info *info);
 
 
 
