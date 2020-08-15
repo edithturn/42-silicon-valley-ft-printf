@@ -6,7 +6,7 @@
 /*   By: epuclla <epuclla@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/29 00:31:21 by epuclla           #+#    #+#             */
-/*   Updated: 2020/08/14 20:33:19 by epuclla          ###   ########.fr       */
+/*   Updated: 2020/08/15 00:24:35 by epuclla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_eval_input(t_info	*info)
 
 	info->format++;
 	set_flags(info);
-	set_width(info);
+	ft_eval_width(info);
 	set_precision(info);
 	int number;
 

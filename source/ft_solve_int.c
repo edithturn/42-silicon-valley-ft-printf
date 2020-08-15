@@ -6,7 +6,7 @@
 /*   By: epuclla <epuclla@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/04 19:09:25 by epuclla           #+#    #+#             */
-/*   Updated: 2020/08/14 21:50:18 by epuclla          ###   ########.fr       */
+/*   Updated: 2020/08/15 00:37:40 by epuclla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ void	ft_solve_int(t_info *info)
 	//char	*str;
 
 	//str = ft_strnew(info->width);
+	// Bonus Part [ + ]
 	/*if (info->flag[e_plus] == '1')
 	{
 		while (info->width)
@@ -27,14 +28,12 @@ void	ft_solve_int(t_info *info)
 		}
 		ft_putchar('+');
 	}*/
+
 	n = ft_itoa(va_arg(info->arguments, long long));
 	while(*n)
 	{
 		ft_putchar(*n);
 		n++;
 	}
-
-
-
 	info->format++;
 }

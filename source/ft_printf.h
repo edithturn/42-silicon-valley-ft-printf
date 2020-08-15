@@ -39,6 +39,7 @@ typedef	struct		s_info
 	int			precision;
 	char		flag[5];  
 	char		length_char[5];
+	int		total_length;
 	int			indicator;
 	int			point;
 }					t_info;
@@ -60,13 +61,15 @@ void	ft_solve_hex(t_info *info);
 void	ft_solve_percent(t_info *info);
 
 
+// Funtions eval
+
 
 // Dispatcher
 typedef	void eval_format_specifiers(t_info *info);
 
 // eval_context
 void	set_flags(t_info *info);
-void	set_width(t_info *info);
+void	ft_eval_width(t_info *info);
 void	set_precision(t_info *info);
 void	set_length(t_info *info);
 

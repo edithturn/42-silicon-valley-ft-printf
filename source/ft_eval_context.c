@@ -6,7 +6,7 @@
 /*   By: epuclla <epuclla@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/24 14:39:18 by epuclla           #+#    #+#             */
-/*   Updated: 2020/08/14 21:48:17 by epuclla          ###   ########.fr       */
+/*   Updated: 2020/08/15 00:35:25 by epuclla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,23 +24,7 @@ void	set_flags(t_info *info)
 		else
 			write(1, "Error", 6);
 		info->format++;
-		}
-}
-
-void	set_width(t_info *info)
-{
-	//clean_width(info);
-	info->width = 0;
-	//The width is not specified in the format string
-	if (*info->format == '*')
-	{
-		info->width = va_arg(info->arguments, int);
-		info->format++;
 	}
-	if (*info->format >= '0' && *info->format <= '9')
-		info->width = ft_atoi(info->format);
-	while(*info->format >= '0' && *info ->format <= '9')
-			info->format++;
 }
 
 void	set_precision(t_info *info)

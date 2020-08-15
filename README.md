@@ -10,7 +10,7 @@ See the workflow [HERE](https://drive.google.com/file/d/1zPrMQ2q4wuR16TWdBtKlLVV
 ### Compilation
 ```bash
 make all
-gcc  ./test/main_test_c.c libftprintf.a  -I ./source/
+gcc  ./tests/main_test_c.c libftprintf.a  -I ./source/
 ```
 
 ### Debug  Mode
