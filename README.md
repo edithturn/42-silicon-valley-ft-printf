@@ -1,7 +1,7 @@
 # ft_printf
 
 ### Info:
-
+Recode printf function
 
 ### Printf Workflow
 
@@ -13,9 +13,10 @@ make all
 gcc  ./test/main_test_c.c libftprintf.a  -I ./source/
 ```
 
+### Debug  Mode
 ```c
-Debug 
 cd {$HOME}/42-silicon-valley-ft-printf
+make all
 gcc -g3 ./tests/main_test_s.c libftprintf.a
 lldb a.out
 b main
