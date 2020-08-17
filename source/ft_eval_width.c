@@ -6,7 +6,7 @@
 /*   By: epuclla <epuclla@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/14 23:57:32 by epuclla           #+#    #+#             */
-/*   Updated: 2020/08/15 01:56:55 by epuclla          ###   ########.fr       */
+/*   Updated: 2020/08/16 16:20:56 by epuclla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,28 +20,16 @@ void	ft_eval_width(t_info *info)
 	if (*info->format == '*')
 	{
 		info->width = va_arg(info->arguments, int);
+		if(info->width < 0)
+		{
+			info->width = info->width * -1;
+			info->flag[e_minus] = '1';
+		}
 		info->format++;
 	}
 	if (*info->format >= '0' && *info->format <= '9')
 		info->width = ft_atoi(info->format);
 	while(*info->format >= '0' && *info ->format <= '9')
 			info->format++;
-}
-
-void	ft_print_width(t_info *info, int length)
-{
-	while (info->width != length)
-	{
-		if (info->flag [e_zero] == '1')
-		{
-			ft_putchar_fd('0', 1);
-			info->total_length++;
-		}
-		if (info->flag[e_minus] == '1')
-		{
-			ft_putchar_fd(' ', 1);
-			info->total_length++;
-		}
-	}
 }
 

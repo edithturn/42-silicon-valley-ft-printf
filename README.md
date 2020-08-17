@@ -11,6 +11,7 @@ See the workflow [HERE](https://drive.google.com/file/d/1zPrMQ2q4wuR16TWdBtKlLVV
 ```bash
 make all
 gcc  ./tests/main_test_c.c libftprintf.a  -I ./source/
+gcc  ./tests/main_test_di.c libftprintf.a  -I ./source/
 ```
 
 ### Debug  Mode
@@ -24,6 +25,7 @@ Then execute:
 cd {$HOME}/42-silicon-valley-ft-printf
 make all
 gcc -g3 ./tests/main_test_s.c libftprintf.a
+gcc -g3 ./tests/main_test_di.c libftprintf.a
 lldb a.out
 b main
 run

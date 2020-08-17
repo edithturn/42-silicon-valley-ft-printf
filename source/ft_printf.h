@@ -7,6 +7,14 @@
 
 int	ft_printf(const char *format, ...);
 
+// Eum for type data
+enum e_length
+{ 
+    e_cchar,
+	e_short,
+	e_long,
+	e_longlong
+};
 // Enum for Flags
 enum e_flags
 { 
@@ -33,15 +41,15 @@ enum e_dispatch
 typedef	struct		s_info
 {
 	va_list		arguments;
-	int			length_int;
 	const char	*format;
 	int			width;
 	int			precision;
 	char		flag[5];  
-	char		length_char[5];
+	char		length[5];
 	int		total_length;
 	int			indicator;
 	int			point;
+	int		signal;
 }					t_info;
 
 //
@@ -55,7 +63,7 @@ void	ft_eval_input(t_info	*info);
 void	ft_solve_char(t_info *info);
 void	ft_solve_string(t_info *info);
 void	ft_solve_pointer(t_info *info);
-void	ft_solve_int(t_info *info);
+void	ft_solve_id(t_info *info);
 void	ft_solve_uint(t_info *info);
 void	ft_solve_hex(t_info *info);
 void	ft_solve_percent(t_info *info);
@@ -68,12 +76,15 @@ void	ft_solve_percent(t_info *info);
 typedef	void eval_format_specifiers(t_info *info);
 
 // eval_context
-void	set_flags(t_info *info);
+void	ft_eval_flag(t_info *info);
 void	ft_eval_width(t_info *info);
-void	set_precision(t_info *info);
-void	set_length(t_info *info);
+void	ft_eval_precision(t_info *info);
 
 //util
 void	clean_flags(t_info *info);
+//id Utils
+void	id_width(t_info *info, long long nbr, int nbrlen, int diff);
 
+// Numbers put
+void	ft_putnbr(long long i);
 #endif

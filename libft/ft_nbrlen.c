@@ -1,24 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_utils.c                                         :+:      :+:    :+:   */
+/*   ft_nbrlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: epuclla <epuclla@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/08/06 06:08:21 by epuclla           #+#    #+#             */
-/*   Updated: 2020/08/14 20:02:22 by epuclla          ###   ########.fr       */
+/*   Created: 2020/08/15 19:30:11 by epuclla           #+#    #+#             */
+/*   Updated: 2020/08/17 00:51:28 by epuclla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-void	clean_flags(t_info *info)
+int		ft_nbrlen(long long nbr)
 {
-	info->flag[e_minus] = '0';
-	info->flag[e_plus] = '0';
-	info->flag[e_space] = '0';
-	info->flag[e_hash] = '0';
-	info->flag[e_zero] = '0';
+	int		nbrlen;
 
-	//return (info);
+	nbrlen = 0;
+	if (nbr == 0)
+		return (1);
+	if (nbr < 0)
+		nbr = nbr *(-1);
+	while (nbr > 0)
+	{
+		nbrlen++;
+		nbr = nbr / 10;
+	}
+	return (nbrlen);
 }

@@ -6,7 +6,7 @@
 /*   By: epuclla <epuclla@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/10 08:38:06 by epuclla           #+#    #+#             */
-/*   Updated: 2020/08/15 03:01:56 by epuclla          ###   ########.fr       */
+/*   Updated: 2020/08/17 01:17:05 by epuclla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,31 +19,25 @@ int main()
 
 	printf("\n----------------------------  Testing ft_printf [ Decimal - Integer ]  ----------------------------- \n\n");
 
-    int    n1;
+    int    n1, n2, n3;
+	n1 = 52;
+	n2 = -1;
+	n3 = 4000;
 
-	n1 = 2;
-    ft_printf("Total Length:(ft_printf) %d\n", ft_printf("|%-2d|\n", n1));
-    printf("Total Length:(printf) %d\n\n\n", printf("|%-2d|\n", n1));
+	ft_printf(" LENGTH ft_printf : %d\n", ft_printf("|%d|", n1));
+   	printf(" LENGTH printf    : %d\n\n", printf("|%d|", n1));
 
-	//ft_printf("Total Length:(ft_printf) %d\n", ft_printf("|%-02d|\n", n1));
-    printf("Total Length:(printf) %d\n\n", printf("|%-02d|\n", n1));
+	ft_printf(" LENGTH ft_printf : %d\n", ft_printf("|%d|", n2));
+   	printf(" LENGTH printf    : %d\n\n", printf("|%d|", n2));
 
+	ft_printf(" LENGTH ft_printf : %d\n", ft_printf("|%2d|", n3));
+   	printf(" LENGTH printf    : %d\n\n", printf("|%2d|", n3));
 
-	//printf("\n%s\n", "ft_printf");
-	//ft_printf("%-2d|\n",6);
-	//ft_printf("%d|\n", -6);
-	//ft_printf("%+5d\n", 0);
+	ft_printf(" LENGTH ft_printf : %d\n", ft_printf("|%0.5d|", n3));
+   	printf(" LENGTH printf    : %d\n\n", printf("|%0.5d|", n3));
 
-	//printf("\n%s\n", "printf");
-	//printf("%-2d|\n", 8);
-
-	//printf("%-5d|\n", 8);
-	//("%-3.3d|\n", 8);
-	///printf("%.8d|\n", 82);
-	//printf("%d|\n", 6);
-    //printf("%+5d\n", 0);
-
-	//	printf("%03d", 42);
-
+	ft_printf(" LENGTH ft_printf : %d\n", ft_printf("|%-8.5d|", n3));
+   	printf(" LENGTH printf    : %d\n\n", printf("|%-8.5d|", n3));
+	
 	return (0);
 }

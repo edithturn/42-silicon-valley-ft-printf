@@ -6,7 +6,7 @@
 /*   By: epuclla <epuclla@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/19 09:57:51 by epuclla           #+#    #+#             */
-/*   Updated: 2020/07/28 11:41:00 by epuclla          ###   ########.fr       */
+/*   Updated: 2020/08/16 17:09:09 by epuclla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,4 +70,8 @@ void				ft_putnbr_fd(int n, int fd);
 void				ft_putstr(char const *c);
 void				ft_putchar_fd(char c, int fd);
 
+
+//News
+int		ft_nbrlen(long long nbr);
+void	ft_putnchar(char c, int n);
 #endif

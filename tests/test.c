@@ -1,27 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_solve_hex.c                                     :+:      :+:    :+:   */
+/*   test.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: epuclla <epuclla@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/08/04 19:10:21 by epuclla           #+#    #+#             */
-/*   Updated: 2020/08/16 17:41:36 by epuclla          ###   ########.fr       */
+/*   Created: 2020/08/15 22:55:51 by epuclla           #+#    #+#             */
+/*   Updated: 2020/08/15 22:59:37 by epuclla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "stdio.h"
 
-void	ft_solve_hex(t_info *info)
+int main()
 {
-	// aplicar contexto
-	char  *n;
-	n = ft_itoa(va_arg(info->arguments, long long));
-
-	while(*n)
-	{
-		ft_putchar(*n);
-		n++;
-	}
-	info->format++;
+	int n1 = -2;
+	printf("Total Length:(printf) %d\n\n", printf("|%4.2d|\n", n1));
+	return 0;
 }

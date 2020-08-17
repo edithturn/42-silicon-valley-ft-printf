@@ -6,20 +6,18 @@
 /*   By: epuclla <epuclla@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/29 00:31:21 by epuclla           #+#    #+#             */
-/*   Updated: 2020/08/15 00:24:35 by epuclla          ###   ########.fr       */
+/*   Updated: 2020/08/16 00:21:45 by epuclla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-//cspdiuxX%
 void	ft_eval_input(t_info	*info)
 {
-
 	info->format++;
-	set_flags(info);
+	ft_eval_flag(info);
 	ft_eval_width(info);
-	set_precision(info);
+	ft_eval_precision(info);
 	int number;
 
 	number = 0;
@@ -45,7 +43,7 @@ void	ft_eval_input(t_info	*info)
 		[e_char] = ft_solve_char,
 		[e_string] = ft_solve_string,
 		[e_pointer] = ft_solve_pointer,
-		[e_decimal_int] = ft_solve_int,
+		[e_decimal_int] = ft_solve_id,
 		[e_u_dec_int] = ft_solve_uint,
 		[e_u_hex_int] = ft_solve_hex,
 		[e_percentage] = ft_solve_percent,

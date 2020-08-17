@@ -1,27 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_solve_hex.c                                     :+:      :+:    :+:   */
+/*   ft_printf_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: epuclla <epuclla@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/08/04 19:10:21 by epuclla           #+#    #+#             */
-/*   Updated: 2020/08/16 17:41:36 by epuclla          ###   ########.fr       */
+/*   Created: 2020/08/06 06:08:21 by epuclla           #+#    #+#             */
+/*   Updated: 2020/08/17 00:36:09 by epuclla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_solve_hex(t_info *info)
+void	clean_flags(t_info *info)
 {
-	// aplicar contexto
-	char  *n;
-	n = ft_itoa(va_arg(info->arguments, long long));
+	info->flag[e_minus] = '0';
+	info->flag[e_plus] = '0';
+	info->flag[e_space] = '0';
+	info->flag[e_hash] = '0';
+	info->flag[e_zero] = '0';
 
-	while(*n)
-	{
-		ft_putchar(*n);
-		n++;
-	}
-	info->format++;
+	//return (info);
 }
