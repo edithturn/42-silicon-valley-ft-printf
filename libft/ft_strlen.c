@@ -6,7 +6,7 @@
 /*   By: epuclla <epuclla@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/22 21:29:27 by epuclla           #+#    #+#             */
-/*   Updated: 2020/04/26 16:15:48 by epuclla          ###   ########.fr       */
+/*   Updated: 2020/08/18 10:04:55 by epuclla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@
 
 size_t	ft_strlen(const char *str)
 {
-	size_t i;
+	const char *ptr;
 
-	i = 0;
-	while (str[i] != '\0')
-		i++;
-	return (i);
+	ptr = str;
+	while (*ptr)
+		ptr++;
+	return (ptr - str);
 }

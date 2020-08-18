@@ -1,34 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: epuclla <epuclla@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/25 19:10:29 by epuclla           #+#    #+#             */
-/*   Updated: 2020/04/26 13:14:59 by epuclla          ###   ########.fr       */
+/*   Updated: 2020/08/17 02:07:48 by epuclla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/*
-**The  strncmp()  function  is similar, except it compares only the first
-**(at most) n bytes of s1 and s2.
-*/
-
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+int		ft_strcmp(const char *s1, const char *s2)
 {
-	while ((*s1 || *s2) && (n > 0))
-	{
-		if (*s1 == *s2)
-		{
-			s1++;
-			s2++;
-			n--;
-		}
-		else
-			return (*(unsigned char*)s1 - *(unsigned char*)s2);
-	}
-	return (0);
+	size_t			i;
+	unsigned char	*new1;
+	unsigned char	*new2;
+
+	i = 0;
+	new1 = (unsigned char *)s1;
+	new2 = (unsigned char *)s2;
+	while (new1[i] && new2[i] && (new1[i] - new2[i] == 0))
+		i++;
+	if (!new1[i] && new2[i])
+		return (-1);
+	else if (new1[i] && !new2[i])
+		return (1);
+	else if (!new1[i] && !new2[i])
+		return (0);
+	else
+		return (new1[i] - new2[i]);
 }
