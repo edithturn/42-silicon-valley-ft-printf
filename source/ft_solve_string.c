@@ -6,7 +6,7 @@
 /*   By: epuclla <epuclla@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/29 00:20:59 by epuclla           #+#    #+#             */
-/*   Updated: 2020/08/18 22:30:04 by epuclla          ###   ########.fr       */
+/*   Updated: 2020/08/19 10:33:15 by epuclla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ static	void	s_handle_string(t_info *info, char *str, char *tmp, int strlen)
 	info->signal = 1;
 	free(str);
 	if (ft_strcmp(tmp, "(null)") == 0)
-		tmp = "";
+		free(tmp);
 }
 
 void	ft_solve_string(t_info *info)
@@ -57,8 +57,11 @@ void	ft_solve_string(t_info *info)
 	int			strlen;
 
 	tmp = va_arg(info->arguments, char *);
-	if (!tmp)
-		tmp = "(null)";
+	if (tmp == NULL)
+	{
+		tmp = ft_strnew(6);
+		ft_strcpy(tmp, "(null)");
+	}
 	if(info->precision == 0)
 	{
 		str = ft_strnew(ft_strlen(tmp));
@@ -66,10 +69,14 @@ void	ft_solve_string(t_info *info)
 	}
 	else
 	{
+		if((info->precision < 6 && info->precision >= 0)  && (ft_strcmp(tmp, "(null)") == 0))
+		{
+			info->precision= 0;
+		}
 		str = ft_strnew(info->precision);
 		ft_strncpy(str, tmp, info->precision);
 	}
-	if (info->point != 1) //there is point, but there is no precision
+	if (info->point != 1) //precision == 0 or precision == 2
 		strlen = ft_strlen(str);
 	else
 		strlen = 0;
