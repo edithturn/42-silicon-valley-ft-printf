@@ -6,7 +6,7 @@
 /*   By: epuclla <epuclla@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/11 01:07:37 by epuclla           #+#    #+#             */
-/*   Updated: 2020/08/19 10:18:01 by epuclla          ###   ########.fr       */
+/*   Updated: 2020/08/19 11:11:49 by epuclla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int main()
 
 	s = "HelloWorld";
 	s1 = "Mundo";
-	/*ft_printf("%s\n" , "|01| Just string");
+	ft_printf("%s\n" , "|01| Just string");
 	ft_printf(" LENGTH ft_printf : %d\n", ft_printf("|%s|", s));
 	printf(" LENGTH printf    : %d\n\n", printf("|%s|", s));
 
@@ -84,8 +84,12 @@ int main()
 	ft_printf(" LENGTH ft_printf : %d\n", ft_printf("|%.s|", s));
 	printf(" LENGTH printf    : %d\n\n", printf("|%.s|", s));
 	
+	ft_printf("%s\n" , "|15| Flag [0]");
+	ft_printf(" LENGTH ft_printf : %d\n", ft_printf("|%08.7s|", "Hello"));
+	printf(" LENGTH printf    : %d\n\n", printf("|%08.7s|", "Hello"));
+
 	// BUGS
-	ft_printf("%s\n" , "|15| Just point with error in precision");*/
+	ft_printf("%s\n" , "|15| Just point with error in precision");
 	ft_printf(" LENGTH ft_printf : %d\n", ft_printf("|%.2s|", null));
 	printf(" LENGTH printf    : %d\n\n", printf("|%.2s|", null));
 
