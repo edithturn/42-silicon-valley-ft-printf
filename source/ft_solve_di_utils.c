@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_solve_id_utils.c                                :+:      :+:    :+:   */
+/*   ft_solve_di_utils.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: epuclla <epuclla@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/16 17:00:56 by epuclla           #+#    #+#             */
-/*   Updated: 2020/08/17 01:10:27 by epuclla          ###   ########.fr       */
+/*   Updated: 2020/08/19 11:22:27 by epuclla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	id_width(t_info *info, long long nbr, int nbrlen, int diff)
+void	di_width(t_info *info, long long nbr, int nbrlen, int diff)
 {
 	if (info->flag[e_zero] == '1' && diff == 0)
 	{

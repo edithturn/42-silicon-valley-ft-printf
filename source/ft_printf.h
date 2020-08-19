@@ -68,7 +68,7 @@ void	ft_eval_input(t_info	*info);
 void	ft_solve_char(t_info *info);
 void	ft_solve_string(t_info *info);
 void	ft_solve_pointer(t_info *info);
-void	ft_solve_id(t_info *info);
+void	ft_solve_di(t_info *info);
 void	ft_solve_uint(t_info *info);
 void	ft_solve_hex(t_info *info);
 void	ft_solve_percent(t_info *info);
@@ -88,7 +88,7 @@ void	ft_eval_precision(t_info *info);
 //util
 void	clean_flags(t_info *info);
 //id Utils
-void	id_width(t_info *info, long long nbr, int nbrlen, int diff);
+void	di_width(t_info *info, long long nbr, int nbrlen, int diff);
 
 // Numbers put
 void	ft_putnbr(long long i);

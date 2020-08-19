@@ -6,7 +6,7 @@
 /*   By: epuclla <epuclla@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/29 00:20:59 by epuclla           #+#    #+#             */
-/*   Updated: 2020/08/19 11:19:58 by epuclla          ###   ########.fr       */
+/*   Updated: 2020/08/19 11:24:29 by epuclla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void	ft_solve_string(t_info *info)
 	}
 	else
 	{
-		if((info->precision < 6 && info->precision >= 0)  && (ft_strcmp(tmp, "(null)") == 0))
+		if((info->precision < NULL_SIZE && info->precision >= 0)  && (ft_strcmp(tmp, "(null)") == 0))
 			info->precision= 0;
 		str = ft_strnew(info->precision);
 		ft_strncpy(str, tmp, info->precision);

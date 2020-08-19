@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_solve_id.c                                      :+:      :+:    :+:   */
+/*   ft_solve_di.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: epuclla <epuclla@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/04 19:09:25 by epuclla           #+#    #+#             */
-/*   Updated: 2020/08/17 09:57:23 by epuclla          ###   ########.fr       */
+/*   Updated: 2020/08/19 11:26:01 by epuclla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static	int	id_handle_length(t_info *info, long long nbr)
+static	int	di_handle_length(t_info *info, long long nbr)
 {
 	int nbrlen;
 
@@ -24,7 +24,7 @@ static	int	id_handle_length(t_info *info, long long nbr)
 	return (nbrlen);
 }
 
-static	void	id_handle_minus(t_info *info, long long nbr, int nbrlen, int diff)
+static	void	di_handle_minus(t_info *info, long long nbr, int nbrlen, int diff)
 {
 	if (nbr < 0)
 		ft_putchar(' ');
@@ -36,10 +36,10 @@ static	void	id_handle_minus(t_info *info, long long nbr, int nbrlen, int diff)
 			ft_putchar(' ');
 }
 
-static	void	id_handle_nominus(t_info *info, long long nbr, int nbrlen, int diff)
+static	void	di_handle_nominus(t_info *info, long long nbr, int nbrlen, int diff)
 {
 	if(info->width > nbrlen)
-		id_width(info, nbr, nbrlen, diff);
+		di_width(info, nbr, nbrlen, diff);
 	else
 	{
 		if (nbr < 0)
@@ -50,14 +50,14 @@ static	void	id_handle_nominus(t_info *info, long long nbr, int nbrlen, int diff)
 	}
 }
 
-void	ft_solve_id(t_info *info)
+void	ft_solve_di(t_info *info)
 {
 	long long nbr;
 	int	nbrlen;
 	int diff;
 
 	nbr = (int)(va_arg(info->arguments, long long));
-	nbrlen = id_handle_length(info, nbr);
+	nbrlen = di_handle_length(info, nbr);
 	diff = info->precision - ft_nbrlen(nbr);
 	if (diff < 0)
 		diff  = 0;
@@ -69,9 +69,9 @@ void	ft_solve_id(t_info *info)
 		info->width++;
 	}
 	if (info->flag[e_minus] == '1')
-		id_handle_minus(info, nbr, nbrlen, diff);
+		di_handle_minus(info, nbr, nbrlen, diff);
 	else
-		id_handle_nominus(info, nbr, nbrlen, diff);
+		di_handle_nominus(info, nbr, nbrlen, diff);
 
 	info->total_length = info->total_length + nbrlen;
 	info->format++;
