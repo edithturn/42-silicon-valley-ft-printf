@@ -6,7 +6,7 @@
 /*   By: epuclla <epuclla@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/10 08:38:06 by epuclla           #+#    #+#             */
-/*   Updated: 2020/08/18 13:07:31 by epuclla          ###   ########.fr       */
+/*   Updated: 2020/08/18 22:48:38 by epuclla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,9 +41,12 @@ int main()
 	
 	ft_printf(" LENGTH ft_printf : %d\n", ft_printf("|%8d|", n2));
    	printf(" LENGTH printf    : %d\n\n", printf("|%8d|", n2));
-	*/
+	
 	ft_printf(" LENGTH ft_printf : %d\n", ft_printf("|%.6d|", -3));
-   	printf(" LENGTH printf    : %d\n\n", printf("|%.6d|", -3));
+   	printf(" LENGTH printf    : %d\n\n", printf("|%.6d|", -3));*/
+
+	ft_printf(" LENGTH ft_printf : %d\n", ft_printf("|%.3d|", 13862));
+   	//printf(" LENGTH printf    : %d\n\n", printf("|%.3d|", 13862));
 	
 	return (0);
 }

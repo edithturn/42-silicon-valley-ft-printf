@@ -5,6 +5,11 @@
 # include <stdlib.h>
 # include <stdarg.h>
 
+
+# ifndef NULL_SIZE
+#  define NULL_SIZE 6
+# endif
+
 int	ft_printf(const char *format, ...);
 
 // Eum for type data

@@ -6,7 +6,7 @@
 /*   By: epuclla <epuclla@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/11 01:07:37 by epuclla           #+#    #+#             */
-/*   Updated: 2020/08/17 01:38:06 by epuclla          ###   ########.fr       */
+/*   Updated: 2020/08/18 22:40:46 by epuclla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,39 @@ int main()
 	char	*s;
 
 	s = "HelloWorld";
+	ft_printf("%s\n" , "|01| Just string");
 	ft_printf(" LENGTH ft_printf : %d\n", ft_printf("|%s|", s));
 	printf(" LENGTH printf    : %d\n\n", printf("|%s|", s));
 
+	ft_printf("%s\n" , "|02|  Flag [-]");
+	ft_printf(" LENGTH ft_printf : %d\n", ft_printf("|%-s|", s));
+	printf(" LENGTH printf    : %d\n\n", printf("|%-s|", s));
+
+	ft_printf("%s\n" , "|03| Width 01 digit");
+	ft_printf(" LENGTH ft_printf : %d\n", ft_printf("|%3s|", s));
+	printf(" LENGTH printf    : %d\n\n", printf("|%3s|", s));
+
+	ft_printf("%s\n" , "|03| Width 01 digit, less than strlen");
+	ft_printf(" LENGTH ft_printf : %d\n", ft_printf("|%3s|", s));
+	printf(" LENGTH printf    : %d\n\n", printf("|%3s|", s));
+
+	ft_printf("%s\n" , "|04| Width greater than strlen");
+	ft_printf(" LENGTH ft_printf : %d\n", ft_printf("|%12s|", s));
+	printf(" LENGTH printf    : %d\n\n", printf("|%12s|", s));
+
+	ft_printf("%s\n" , "|05| Width greater than strlen and flag [-]");
+	ft_printf(" LENGTH ft_printf : %d\n", ft_printf("|%-12s|", s));
+	printf(" LENGTH printf    : %d\n\n", printf("|%-12s|", s));
+
+	ft_printf("%s\n" , "|01| Just point");
+	ft_printf(" LENGTH ft_printf : %d\n", ft_printf("|%-5s|", s));
+	printf(" LENGTH printf    : %d\n\n", printf("|%-5s|", s));
+
+	ft_printf("%s\n" , "|01| Just point");
+	ft_printf(" LENGTH ft_printf : %d\n", ft_printf("|%.s|", s));
+	printf(" LENGTH printf    : %d\n\n", printf("|%.s|", s));
+	
+	
 	//No Flag
 	/*ft_printf("%s|01|\n", "Puclla");
 	printf("%s|01|\n", "Puclla");*/

@@ -6,7 +6,7 @@
 /*   By: epuclla <epuclla@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/19 09:57:51 by epuclla           #+#    #+#             */
-/*   Updated: 2020/08/17 02:09:39 by epuclla          ###   ########.fr       */
+/*   Updated: 2020/08/18 16:48:02 by epuclla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ char				*ft_strnstr(const char *big, const char *little,
 								size_t length);
 size_t				ft_strlen(const char *str);
 char			*ft_strcpy(char *dst, const char *src);
+char			*ft_strncpy(char *dst, const char *src, size_t len);
 int					ft_memcmp(const void *s1, const void *s2, size_t n);
 int					ft_strcmp(const char *s1, const char *s2);
 int					ft_atoi(const char *str);
