@@ -6,7 +6,7 @@
 /*   By: epuclla <epuclla@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/04 19:05:50 by epuclla           #+#    #+#             */
-/*   Updated: 2020/08/18 15:08:15 by epuclla          ###   ########.fr       */
+/*   Updated: 2020/08/19 13:03:35 by epuclla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,4 @@ void	ft_solve_char(t_info *info)
 		ft_putchar(c);
 	info->total_length++; 
 	info->format++;
-	info->signal = 1;
 }

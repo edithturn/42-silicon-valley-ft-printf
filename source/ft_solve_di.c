@@ -6,22 +6,35 @@
 /*   By: epuclla <epuclla@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/04 19:09:25 by epuclla           #+#    #+#             */
-/*   Updated: 2020/08/19 13:00:37 by epuclla          ###   ########.fr       */
+/*   Updated: 2020/08/19 17:28:44 by epuclla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static	int	di_handle_length(t_info *info, long long nbr)
+static	void	di_width(t_info *info, long long nbr, int nbrlen, int diff)
 {
-	int nbrlen;
-
-	nbrlen =  ft_nbrlen(nbr);
-	if (info->point == 1 && nbr == 0)
-		nbrlen--;
-	if (nbr < 0)
-		nbrlen++;
-	return (nbrlen);
+	if (info->flag[e_zero] == '1' && diff == 0)
+	{
+		if (info->point != 0)
+			while (--info->width > nbrlen)
+				ft_putchar(' ');
+		if (nbr < 0)
+			ft_putchar('-');
+		if(info->point == 0)
+			while (--info->width > nbrlen)
+				ft_putchar('0');
+	}
+	else
+	{
+		while (--info->width > (nbrlen + diff))
+			ft_putchar(' ');
+		if (nbr < 0)
+			ft_putchar('-');
+	}
+	ft_putnchar('0', diff);
+	if (info->point != 1 || nbr != 0)
+		ft_putnbr(nbr);
 }
 
 static	void	di_handle_flag(t_info *info, int nbr, int nbrlen, int diff)
@@ -29,7 +42,7 @@ static	void	di_handle_flag(t_info *info, int nbr, int nbrlen, int diff)
 	if (info->flag[e_minus] == '1')
 	{
 		if (nbr < 0)
-			ft_putchar(' ');
+			ft_putchar('-');
 		ft_putnchar('0', diff);
 		if (info->point != 1 || nbr != 0)
 			ft_putnbr(nbr);
@@ -58,8 +71,12 @@ void	ft_solve_di(t_info *info)
 	int diff;
 
 	nbr = (int)(va_arg(info->arguments, long long));
-	nbrlen = di_handle_length(info, nbr);
 	diff = info->precision - ft_nbrlen(nbr);
+	nbrlen =  ft_nbrlen(nbr);
+	if (info->point == 1 && nbr == 0)
+		nbrlen--;
+	if (nbr < 0)
+		nbrlen++;
 	if (diff < 0)
 		diff  = 0;
 	if (info->width <= info->precision)

@@ -54,7 +54,6 @@ typedef	struct		s_info
 	int		total_length;
 	int			indicator;
 	int			point;
-	int		signal;
 }					t_info;
 
 //
@@ -88,7 +87,7 @@ void	ft_eval_precision(t_info *info);
 //util
 void	clean_flags(t_info *info);
 //id Utils
-void	di_width(t_info *info, long long nbr, int nbrlen, int diff);
+//void	di_width(t_info *info, long long nbr, int nbrlen, int diff);
 
 // Numbers put
 void	ft_putnbr(long long i);

@@ -6,7 +6,7 @@
 /*   By: epuclla <epuclla@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/29 00:20:59 by epuclla           #+#    #+#             */
-/*   Updated: 2020/08/19 11:24:29 by epuclla          ###   ########.fr       */
+/*   Updated: 2020/08/19 13:03:47 by epuclla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,6 @@ static	void	s_handle_string(t_info *info, char *str, int strlen)
 		ft_putstr(str);
 	info->total_length = info->total_length + strlen;
 	info->format++;
-	info->signal = 1;
 	free(str);
 }
 void	ft_solve_string(t_info *info)
