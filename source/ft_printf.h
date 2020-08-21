@@ -24,9 +24,6 @@ enum e_length
 enum e_flags
 { 
     e_minus,
-	e_plus,
-	e_space,
-	e_hash,
 	e_zero
 };
 // Enum for Distpach table
@@ -49,10 +46,8 @@ typedef	struct		s_info
 	const char	*format;
 	int			width;
 	int			precision;
-	char		flag[5];  
-	char		length[5];
+	char		flag[2];
 	int		total_length;
-	int			indicator;
 	int			point;
 }					t_info;
 
