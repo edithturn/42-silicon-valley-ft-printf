@@ -6,7 +6,7 @@
 /*   By: epuclla <epuclla@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/12 23:06:51 by epuclla           #+#    #+#             */
-/*   Updated: 2020/08/16 17:35:25 by epuclla          ###   ########.fr       */
+/*   Updated: 2020/08/20 12:36:17 by epuclla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,7 @@ int ft_printf(const char *format, ...)
 	info->format = format;
 	while(*info->format)
 	{
-		info->indicator = 0;
-		while(*info->format && *info->format != '%')
+			while(*info->format && *info->format != '%')
 		{
 			ft_putchar(*info->format);
 			info->total_length++;

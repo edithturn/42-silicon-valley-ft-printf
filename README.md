@@ -24,8 +24,11 @@ Then execute:
 ```c
 cd {$HOME}/42-silicon-valley-ft-printf
 make all
-gcc -g3 ./tests/main_test_s.c libftprintf.a
-gcc -g3 ./tests/main_test_di.c libftprintf.a
+gcc -g3 ./tests/01_main_test_s.c libftprintf.a
+gcc -g3 ./tests/02_main_test_s.c libftprintf.a
+gcc -g3 ./tests/03_main_test_di.c libftprintf.a
+gcc -g3 ./tests/04_main_test_p.c libftprintf.a
+
 lldb a.out
 b main
 run
