@@ -6,7 +6,7 @@
 /*   By: epuclla <epuclla@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/19 22:11:54 by epuclla           #+#    #+#             */
-/*   Updated: 2020/08/22 01:55:03 by epuclla          ###   ########.fr       */
+/*   Updated: 2020/08/22 15:38:02 by epuclla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,13 +36,20 @@ int main()
 
 	char *s = "asd";
     char **p = &s;
-
-  //  ft_printf("%p\n", p);
-//	printf("%p\n\n", p);
+	static char *s_hello = "hello world";
+  	ft_printf("%p\n", p);
+  	printf("%p\n\n", p);
 
 	ft_printf("|%p|\n", NULL);
 	printf("|%p|\n", NULL);
-//printf("|%p|\n", NULL);
+
+	ft_printf("|%5p|\n", 0);
+	printf("|%5p|\n", 0);
+	
+	ft_printf("%.*p\n", -1, s_hello);
+	printf("%.*p\n", -1, s_hello);
+   
+    //printf("|%p|\n", NULL);
     /*printf("The direction of s is: %p\n", &s);
 
     printf("The value of p is: %p\n", p);
