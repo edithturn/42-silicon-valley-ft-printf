@@ -28,6 +28,8 @@ gcc -g3 ./tests/01_main_test_s.c libftprintf.a
 gcc -g3 ./tests/02_main_test_s.c libftprintf.a
 gcc -g3 ./tests/03_main_test_di.c libftprintf.a
 gcc -g3 ./tests/04_main_test_p.c libftprintf.a
+gcc -g3 ./tests/05_main_test_x.c libftprintf.a
+gcc -g3 ./tests/05_main_test_u.c libftprintf.a
 
 lldb a.out
 b main

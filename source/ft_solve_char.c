@@ -6,7 +6,7 @@
 /*   By: epuclla <epuclla@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/04 19:05:50 by epuclla           #+#    #+#             */
-/*   Updated: 2020/08/19 13:03:35 by epuclla          ###   ########.fr       */
+/*   Updated: 2020/08/21 23:47:20 by epuclla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,13 @@ void	c_handle_width(t_info *info)
 	if (info->width > 1)
 	{
 		info->total_length = info->total_length + (info->width - 1);
-		while (info->width > 1)
-		{
-			ft_putchar(' ');
-			info->width--;
-		}
+		info->width++;
+		if (info->flag[e_zero] == '1' && info->flag[e_minus] != '1')
+			while (--info->width > 1)
+				ft_putchar('0');
+		else
+			while (--info->width > 1)
+				ft_putchar(' ');
 	}
 }
 void	ft_solve_char(t_info *info)

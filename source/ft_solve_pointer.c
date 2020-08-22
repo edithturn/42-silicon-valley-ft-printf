@@ -6,49 +6,84 @@
 /*   By: epuclla <epuclla@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/04 19:06:23 by epuclla           #+#    #+#             */
-/*   Updated: 2020/08/20 22:10:45 by epuclla          ###   ########.fr       */
+/*   Updated: 2020/08/21 21:47:01 by epuclla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-char			*ft_utoa_hex_p(unsigned long long int num)
+static	void	p_write_hex(unsigned	long	long	num )
 {
-	char					*str;
-	unsigned int			len;
-	unsigned long long int	param;
+	if (num > 15)
+	{
+		p_write_hex(num / 16);
+		p_write_hex(num % 16);
+	}
+	else
+	{
+		if (num <= 9)
+			ft_putchar(num + '0');
+		else
+			ft_putchar(num - 10 + 'a');
+	}
+}
 
-	len = 1;
-	param = num;
-	while (param >= 16)
+static	void	p_handle_width(t_info *info, int addrlen, int diff)
+{
+	if (info->width > addrlen && info->width > info->precision)
 	{
-		param /= 16;
-		len++;
+		info->total_length = info->total_length + info->width - addrlen;
+		info->width++;
+		if (info->flag[e_zero] == '1' && info->flag[e_minus] != '1' && diff != 0)
+			while (--info->width > addrlen)
+				ft_putchar('0');
+		else
+			while (--info->width > addrlen + diff)
+				ft_putchar(' ');
 	}
-	len += 2;
-	if (!(str = (char *)malloc(sizeof(*str) * (len + 1))))
-		return (NULL);
-	str[0] = '0';
-	str[1] = 'x';
-	str[len] = '\0';
-	while (len > 2)
+}
+static	void handle_pointer (t_info *info, unsigned long long addr, int addrlen, int diff)
+{
+	if (info->flag[e_minus] == '1' || (info->flag[e_zero] == '1' && diff == 0))
 	{
-		param = num % 16;
-		str[--len] = param < 10 ? param + 48 : param % 10 + 'a';
-		num /= 16;
+		ft_putstr("'0x");
+		ft_putnchar('0', diff);
 	}
-	return (str);
+	if (info->flag[e_minus] == '1' && (addr != 0 || info->point != 1))
+		p_write_hex(addr);
+	p_handle_width(info, addrlen, diff);
+	if (info->flag[e_minus] != '1' && (info->flag[e_zero] != '1' || diff != 0))
+	{
+		ft_putstr("0x");
+		ft_putnchar('0', diff);
+	}
+	if (info->flag[e_minus] != '1' && (addr != 0 || info->point != 1))
+		p_write_hex(addr);
 }
 
 void	ft_solve_pointer(t_info *info)
 {
-	char		*addr;
+	unsigned	long	long 	addr;
+	unsigned	long	long tmp;
+	int	addrlen;
+	int diff;
 
-	addr = ft_utoa_hex_p((unsigned long long)va_arg(info->arguments, void *));
-	
-	if (info->width < ((int)ft_strlen(addr) - 2))
-		info->width = 0;
-	ft_putstr("0x");
-	//ft_putnchar('0', p);
+	addr = (unsigned long long)va_arg(info->arguments, void *);
+	addrlen = 2;
+	tmp  = addr;
+	if (tmp == 0 && info->point != 1)
+		addrlen++;
+	while (tmp > 0)
+	{
+		addrlen++;
+		tmp /= 16;
+	}
+	diff = info->precision - addrlen + 2 ;
+	if (diff < 0 )
+		diff = 0;
+	if (info->width <= info->precision && info != 0)
+		info->total_length = info->total_length + diff;
+	handle_pointer(info, addr, addrlen, diff );
+	info->total_length = info->total_length + addrlen;
 	info->format++;
 }

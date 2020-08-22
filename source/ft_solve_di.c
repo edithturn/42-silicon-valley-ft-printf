@@ -6,13 +6,13 @@
 /*   By: epuclla <epuclla@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/04 19:09:25 by epuclla           #+#    #+#             */
-/*   Updated: 2020/08/19 17:28:44 by epuclla          ###   ########.fr       */
+/*   Updated: 2020/08/21 14:31:49 by epuclla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static	void	di_width(t_info *info, long long nbr, int nbrlen, int diff)
+static	void	di_handle_width(t_info *info, long long nbr, int nbrlen, int diff)
 {
 	if (info->flag[e_zero] == '1' && diff == 0)
 	{
@@ -53,7 +53,7 @@ static	void	di_handle_flag(t_info *info, int nbr, int nbrlen, int diff)
 	else
 	{
 		if(info->width > nbrlen)
-			di_width(info, nbr, nbrlen, diff);
+			di_handle_width(info, nbr, nbrlen, diff);
 		else
 		{
 			if (nbr < 0)
@@ -71,8 +71,9 @@ void	ft_solve_di(t_info *info)
 	int diff;
 
 	nbr = (int)(va_arg(info->arguments, long long));
-	diff = info->precision - ft_nbrlen(nbr);
 	nbrlen =  ft_nbrlen(nbr);
+	diff = info->precision - nbrlen;
+	
 	if (info->point == 1 && nbr == 0)
 		nbrlen--;
 	if (nbr < 0)

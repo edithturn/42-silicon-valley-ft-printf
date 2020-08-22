@@ -6,7 +6,7 @@
 /*   By: epuclla <epuclla@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/19 22:11:54 by epuclla           #+#    #+#             */
-/*   Updated: 2020/08/20 12:43:27 by epuclla          ###   ########.fr       */
+/*   Updated: 2020/08/21 21:39:00 by epuclla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,11 @@ int main()
 	char *s = "asd";
     char **p = &s;
 
-    ft_printf("%p\n", p);
-	printf("%p\n", p);
+  //  ft_printf("%p\n", p);
+//	printf("%p\n\n", p);
+
+	ft_printf("|%p|\n", NULL);
+//printf("|%p|\n", NULL);
     /*printf("The direction of s is: %p\n", &s);
 
     printf("The value of p is: %p\n", p);
@@ -46,9 +49,9 @@ int main()
 
     printf("The direction of s[0] is: %p\n", &s[0]);
     printf("The direction of s[1] is: %p\n", &s[1]);
-    printf("The direction of s[2] is: %p\n", &s[2]);*/
+    printf("The direction of s[2] is: %p\n", &s[2]);
 
-/*
+
     ft_printf("The value of s is: %p\n", s);
     ft_printf("The direction of s is: %p\n", &s);
 
@@ -57,13 +60,24 @@ int main()
 
     ft_printf("The direction of s[0] is: %p\n", &s[0]);
     ft_printf("The direction of s[1] is: %p\n", &s[1]);
-    ft_printf("The direction of s[2] is: %p\n", &s[2]);*/
+    ft_printf("The direction of s[2] is: %p\n", &s[2]);
 
+	ft_printf("|%p|\n", NULL);
+	printf("|%p|\n", NULL);
 
-	printf(" LENGTH printf    : %d\n\n", printf("%p", NULL));
-	printf(" LENGTH printf    : %d\n\n", printf("%5p", 0));
+	ft_printf("|%5p|\n", 0);
+	printf("|%5p|\n", 0); 
 
-	printf("%p%p%p%p%p%p%p%p%p%p%p%p",&a01,&a02,&a03,&a04,&a05,&a06,&a07,&a08,&a09,&a10,&a11,&a12);
+	ft_printf("%p%p%p%p%p%p%p%p%p%p%p%p",&a01,&a02,&a03,&a04,&a05,&a06,&a07,&a08,&a09,&a10,&a11,&a12);
+
 	
+	ft_printf("%70p%70p%70p%70p%70p%70p%70p%70p%70p%70p%70p%70p",&a01,&a02,&a03,&a04,&a05,&a06,&a07,&a08,&a09,&a10,&a11,&a12);
+	ft_printf("%5p%5p%5p%5p%5p%5p%5p%5p%5p%5p%5p%5p",&a01,&a02,&a03,&a04,&a05,&a06,&a07,&a08,&a09,&a10,&a11,&a12);
+	ft_printf("%5p%5p%5p%5p%5p%5p%5p%5p%5p%5p%5p%5p",&a01,&a02,&a03,&a04,&a05,&a06,&a07,&a08,&a09,&a10,&a11,&a12);
+	ft_printf("%16p%16p%16p%16p%16p%16p%16p%16p%16p%16p%16p%16p",&a01,&a02,&a03,&a04,&a05,&a06,&a07,&a08,&a09,&a10,&a11,&a12);
+	ft_printf("%8p%8p%8p%8p%8p%8p%8p%8p%8p%8p%8p%8p",&a01,&a02,&a03,&a04,&a05,&a06,&a07,&a08,&a09,&a10,&a11,&a12);
+	ft_printf("%8p%8p%8p%8p%8p%8p%8p%8p%8p%8p%8p%8p",&a01,&a02,&a03,&a04,&a05,&a06,&a07,&a08,&a09,&a10,&a11,&a12);
+*/
+
 	return (0);
 }

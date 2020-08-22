@@ -86,4 +86,11 @@ void	clean_flags(t_info *info);
 
 // Numbers put
 void	ft_putnbr(long long i);
+
+# if __APPLE__
+#  define IS_MACOS 1
+# else
+#  define IS_MACOS 0
+# endif
+
 #endif
