@@ -6,7 +6,7 @@
 /*   By: epuclla <epuclla@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/04 19:06:23 by epuclla           #+#    #+#             */
-/*   Updated: 2020/08/22 15:37:41 by epuclla          ###   ########.fr       */
+/*   Updated: 2020/08/22 15:49:10 by epuclla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ void	ft_solve_pointer(t_info *info)
 	int diff;
 
 	addr = (unsigned long long)va_arg(info->arguments, void *);
-	if (addr != 0)
+	if (addr > 0)
 		addrlen = 2;
 	tmp  = addr;
 	if (tmp == 0 && info->point != 1)
