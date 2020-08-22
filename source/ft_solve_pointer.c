@@ -6,7 +6,7 @@
 /*   By: epuclla <epuclla@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/04 19:06:23 by epuclla           #+#    #+#             */
-/*   Updated: 2020/08/21 21:47:01 by epuclla          ###   ########.fr       */
+/*   Updated: 2020/08/22 00:50:34 by epuclla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ static	void handle_pointer (t_info *info, unsigned long long addr, int addrlen, 
 {
 	if (info->flag[e_minus] == '1' || (info->flag[e_zero] == '1' && diff == 0))
 	{
-		ft_putstr("'0x");
+		ft_putstr("0x");
 		ft_putnchar('0', diff);
 	}
 	if (info->flag[e_minus] == '1' && (addr != 0 || info->point != 1))
