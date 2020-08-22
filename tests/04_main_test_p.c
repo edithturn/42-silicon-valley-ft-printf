@@ -6,7 +6,7 @@
 /*   By: epuclla <epuclla@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/19 22:11:54 by epuclla           #+#    #+#             */
-/*   Updated: 2020/08/21 21:39:00 by epuclla          ###   ########.fr       */
+/*   Updated: 2020/08/22 01:55:03 by epuclla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ int main()
 //	printf("%p\n\n", p);
 
 	ft_printf("|%p|\n", NULL);
+	printf("|%p|\n", NULL);
 //printf("|%p|\n", NULL);
     /*printf("The direction of s is: %p\n", &s);
 

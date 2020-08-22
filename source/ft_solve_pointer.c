@@ -6,7 +6,7 @@
 /*   By: epuclla <epuclla@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/04 19:06:23 by epuclla           #+#    #+#             */
-/*   Updated: 2020/08/22 00:50:34 by epuclla          ###   ########.fr       */
+/*   Updated: 2020/08/22 14:58:30 by epuclla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,19 @@
 
 static	void	p_write_hex(unsigned	long	long	num )
 {
-	if (num > 15)
-	{
-		p_write_hex(num / 16);
-		p_write_hex(num % 16);
-	}
-	else
-	{
-		if (num <= 9)
-			ft_putchar(num + '0');
+		if (num > 15)
+		{
+			p_write_hex(num / 16);
+			p_write_hex(num % 16);
+		}
 		else
-			ft_putchar(num - 10 + 'a');
-	}
+		{
+				if (num <= 9)
+					ft_putchar(num + '0');
+				else
+					ft_putchar(num - 10 + 'a');
+			
+		}
 }
 
 static	void	p_handle_width(t_info *info, int addrlen, int diff)
@@ -46,18 +47,23 @@ static	void handle_pointer (t_info *info, unsigned long long addr, int addrlen, 
 {
 	if (info->flag[e_minus] == '1' || (info->flag[e_zero] == '1' && diff == 0))
 	{
-		ft_putstr("0x");
-		ft_putnchar('0', diff);
+			ft_putstr("0x");
+			ft_putnchar('0', diff);
 	}
 	if (info->flag[e_minus] == '1' && (addr != 0 || info->point != 1))
 		p_write_hex(addr);
 	p_handle_width(info, addrlen, diff);
 	if (info->flag[e_minus] != '1' && (info->flag[e_zero] != '1' || diff != 0))
 	{
-		ft_putstr("0x");
-		ft_putnchar('0', diff);
+		if (!IS_MACOS)
+			ft_putstr("(nil)");
+		else 
+		{
+			ft_putstr("0x");
+			ft_putnchar('0', diff);
+		}
 	}
-	if (info->flag[e_minus] != '1' && (addr != 0 || info->point != 1))
+	if (info->flag[e_minus] != '1' && (addr != 0 && info->point != 1))
 		p_write_hex(addr);
 }
 
@@ -73,6 +79,7 @@ void	ft_solve_pointer(t_info *info)
 	tmp  = addr;
 	if (tmp == 0 && info->point != 1)
 		addrlen++;
+
 	while (tmp > 0)
 	{
 		addrlen++;
