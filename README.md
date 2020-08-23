@@ -29,7 +29,7 @@ gcc -g3 ./tests/02_main_test_s.c libftprintf.a
 gcc -g3 ./tests/03_main_test_di.c libftprintf.a
 gcc -g3 ./tests/04_main_test_p.c libftprintf.a
 gcc -g3 ./tests/05_main_test_x.c libftprintf.a
-gcc -g3 ./tests/05_main_test_u.c libftprintf.a
+gcc -g3 ./tests/06_main_test_u.c libftprintf.a
 
 lldb a.out
 b main
@@ -60,3 +60,19 @@ Others
 - https://github.com/Mazoise/42TESTERS-PRINTF
 - https://github.com/gavinfielder/pft
 - https://github.com/charMstr/printf_lover_v2
+
+#Resources:
+
+- https://docs.google.com/document/d/1znc7N5ua3WC1PhGcirRhtadHYSrPK3wxTApMdlJXYes/edit?pli=1#
+- https://www.cplusplus.com/reference/cstdio/printf/
+- https://www.cypress.com/file/54441/download
+
+## Norminette
+
+Use and install this repository: 
+[ Norminette ](https://github.com/42sp/norminette-client.git)
+
+**Run**
+```bash
+norminette *.*
+```
