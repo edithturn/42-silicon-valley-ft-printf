@@ -6,7 +6,7 @@
 /*   By: epuclla <epuclla@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/04 19:06:23 by epuclla           #+#    #+#             */
-/*   Updated: 2020/08/22 18:19:38 by epuclla          ###   ########.fr       */
+/*   Updated: 2020/08/22 18:25:48 by epuclla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,7 @@ void	ft_solve_pointer(t_info *info)
 	diff = info->precision - addrlen + 2 ;
 	if (diff < 0 )
 		diff = 0;
-	if (info->width <= info->precision && info != 0)
+	if (info->width <= info->precision && diff != 0)
 		info->total_length = info->total_length + diff;
 	handle_pointer(info, addr, addrlen, diff );
 	info->total_length = info->total_length + addrlen;
