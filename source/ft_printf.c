@@ -6,37 +6,33 @@
 /*   By: epuclla <epuclla@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/12 23:06:51 by epuclla           #+#    #+#             */
-/*   Updated: 2020/08/20 12:36:17 by epuclla          ###   ########.fr       */
+/*   Updated: 2020/08/23 14:57:55 by epuclla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-//cspdiuxX%
-int ft_printf(const char *format, ...)
+int	ft_printf(const char *format, ...)
 {
-	//Declaring variables
-	t_info	*info;
-	int length;
+	t_info		*info;
+	int			length;
 
-	//Initializing my variables
 	info = (t_info *)ft_memalloc(sizeof(t_info));
-
 	va_start(info->arguments, format);
 	info->format = format;
-	while(*info->format)
+	while (*info->format)
 	{
-			while(*info->format && *info->format != '%')
+		while (*info->format && *info->format != '%')
 		{
 			ft_putchar(*info->format);
 			info->total_length++;
 			info->format++;
 		}
-		if(*info->format && *info->format == '%')
+		if (*info->format && *info->format == '%')
 			ft_eval_input(info);
 	}
 	va_end(info->arguments);
 	length = info->total_length;
 	free(info);
-	return(length);
+	return (length);
 }

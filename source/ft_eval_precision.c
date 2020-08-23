@@ -6,7 +6,7 @@
 /*   By: epuclla <epuclla@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/15 22:05:15 by epuclla           #+#    #+#             */
-/*   Updated: 2020/08/16 17:41:13 by epuclla          ###   ########.fr       */
+/*   Updated: 2020/08/23 10:00:23 by epuclla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_eval_precision(t_info *info)
 {
 	info->precision = 0;
 	info->point = 0;
-	if(*info->format == '.')
+	if (*info->format == '.')
 	{
 		info->point = 1;
 		info->format++;
@@ -30,11 +30,11 @@ void	ft_eval_precision(t_info *info)
 			}
 			info->format++;
 		}
-		if(*info->format >= '0' && *info->format<='9')
+		if (*info->format >= '0' && *info->format <= '9')
 			info->precision = ft_atoi(info->format);
-		while(*info->format >= '0' && *info->format<= '9')
+		while (*info->format >= '0' && *info->format <= '9')
 			info->format++;
 		if (info->precision > 0)
 			info->point = 2;
-		}
+	}
 }

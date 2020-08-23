@@ -6,7 +6,7 @@
 /*   By: epuclla <epuclla@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/29 00:31:21 by epuclla           #+#    #+#             */
-/*   Updated: 2020/08/19 11:25:23 by epuclla          ###   ########.fr       */
+/*   Updated: 2020/08/23 10:59:50 by epuclla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void	ft_eval_input(t_info	*info)
 		write(1, "Error", 5);
 	
 	//Dispatch table
-	eval_format_specifiers	*functions_array[e_length] = {
+	t_formatter	*functions_array[e_length] = {
 		[e_char] = ft_solve_char,
 		[e_string] = ft_solve_string,
 		[e_pointer] = ft_solve_pointer,
@@ -49,7 +49,5 @@ void	ft_eval_input(t_info	*info)
 		[e_percentage] = ft_solve_percent,
 	};
 
-	//Use my dispatch table
-	//eval_format_specifiers *format_specifiers_array;
 	functions_array[number](info);
 }
