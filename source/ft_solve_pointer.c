@@ -6,7 +6,7 @@
 /*   By: epuclla <epuclla@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/04 19:06:23 by epuclla           #+#    #+#             */
-/*   Updated: 2020/08/22 19:25:17 by epuclla          ###   ########.fr       */
+/*   Updated: 2020/08/23 06:21:04 by epuclla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,15 +83,23 @@ void	ft_solve_pointer(t_info *info)
 	addr = (unsigned long long)va_arg(info->arguments, void *);
 	addrlen = 2;
 	tmp  = addr;
-	if (tmp == 0 && info->point != 1)
-		addrlen++;
-
+	if (IS_MACOS)
+	{
+		if (tmp == 0 && info->point != 1)
+			addrlen++;
+	}
+	else
+	{
+		if (tmp == 0 && info->point != 1)
+			addrlen = addrlen + 3;
+	}
+	
 	while (tmp > 0)
 	{
 		addrlen++;
 		tmp /= 16;
 	}
-	diff = info->precision - addrlen + 2 ;
+	diff = info->precision - addrlen + 2;
 	if (diff < 0 )
 		diff = 0;
 	if (info->width <= info->precision && diff != 0)
