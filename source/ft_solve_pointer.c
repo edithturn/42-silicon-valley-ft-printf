@@ -6,7 +6,7 @@
 /*   By: epuclla <epuclla@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/04 19:06:23 by epuclla           #+#    #+#             */
-/*   Updated: 2020/08/22 18:05:19 by epuclla          ###   ########.fr       */
+/*   Updated: 2020/08/22 18:10:34 by epuclla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,10 +52,11 @@ static	void handle_pointer (t_info *info, unsigned long long addr, int addrlen, 
 	}
 	if (info->flag[e_minus] == '1' && (addr != 0 || info->point != 1))
 		p_write_hex(addr);
-	p_handle_width(info, addrlen, diff);
+	if (addr > 0)
+		p_handle_width(info, addrlen, diff);
 	if (info->flag[e_minus] != '1' && (info->flag[e_zero] != '1' || diff != 0))
 	{
-		if (!IS_MACOS && (addr == 0 ) )
+		if (!IS_MACOS && addr == 0)
 			ft_putstr("(nil)");
 		else 
 		{
