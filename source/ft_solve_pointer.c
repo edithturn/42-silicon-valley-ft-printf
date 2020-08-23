@@ -6,25 +6,25 @@
 /*   By: epuclla <epuclla@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/04 19:06:23 by epuclla           #+#    #+#             */
-/*   Updated: 2020/08/23 06:21:04 by epuclla          ###   ########.fr       */
+/*   Updated: 2020/08/23 07:23:47 by epuclla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static	void	p_write_hex(unsigned	long	long	num )
+static	void	p_itoa_hex(unsigned	long	long	nbr)
 {
-		if (num > 15)
+		if (nbr > 15)
 		{
-			p_write_hex(num / 16);
-			p_write_hex(num % 16);
+			p_itoa_hex(nbr / 16);
+			p_itoa_hex(nbr % 16);
 		}
 		else
 		{
-				if (num <= 9)
-					ft_putchar(num + '0');
-				else
-					ft_putchar(num - 10 + 'a');
+			if (nbr <= 9)
+				ft_putchar(nbr + '0');
+			else
+				ft_putchar(nbr - 10 + 'a');
 			
 		}
 }
@@ -43,7 +43,7 @@ static	void	p_handle_width(t_info *info, int addrlen, int diff)
 				ft_putchar(' ');
 	}
 }
-static	void handle_pointer (t_info *info, unsigned long long addr, int addrlen, int diff)
+static	void handle_pointer(t_info *info, unsigned long long addr, int addrlen, int diff)
 {
 	if (info->flag[e_minus] == '1' || (info->flag[e_zero] == '1' && diff == 0))
 	{
@@ -51,8 +51,7 @@ static	void handle_pointer (t_info *info, unsigned long long addr, int addrlen, 
 			ft_putnchar('0', diff);
 	}
 	if (info->flag[e_minus] == '1' && (addr != 0 || info->point != 1))
-		p_write_hex(addr);
-	
+		p_itoa_hex(addr);
 	if (!IS_MACOS && addr > 0)
 		p_handle_width(info, addrlen, diff);
 	if (IS_MACOS)
@@ -70,7 +69,7 @@ static	void handle_pointer (t_info *info, unsigned long long addr, int addrlen, 
 		}
 	}
 	if (info->flag[e_minus] != '1' && (addr != 0 && info->point != 1))
-		p_write_hex(addr);
+		p_itoa_hex(addr);
 }
 
 void	ft_solve_pointer(t_info *info)
@@ -93,7 +92,6 @@ void	ft_solve_pointer(t_info *info)
 		if (tmp == 0 && info->point != 1)
 			addrlen = addrlen + 3;
 	}
-	
 	while (tmp > 0)
 	{
 		addrlen++;

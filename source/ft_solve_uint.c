@@ -6,17 +6,17 @@
 /*   By: epuclla <epuclla@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/04 19:10:02 by epuclla           #+#    #+#             */
-/*   Updated: 2020/08/21 14:34:26 by epuclla          ###   ########.fr       */
+/*   Updated: 2020/08/23 07:40:54 by epuclla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_write_unsigned(unsigned long long nbr)
+void	u_itoa_hex(unsigned long long nbr)
 {
 	if (nbr > 9)
 	{
-		ft_write_unsigned(nbr / 10);
+		u_itoa_hex(nbr / 10);
 		ft_putchar(nbr % 10 + '0');
 	}
 	else
@@ -50,7 +50,7 @@ static	void	u_handle_uint(t_info *info, unsigned	long long nbr, int numlen, int 
 	if(info->flag[e_minus] == '1' && (info->point != 1 || nbr != 0))
 	{
 		ft_putnchar('0', diff);
-		ft_write_unsigned(nbr);
+		u_itoa_hex(nbr);
 	}
 	if (info->width > numlen)
 	{
@@ -60,7 +60,7 @@ static	void	u_handle_uint(t_info *info, unsigned	long long nbr, int numlen, int 
 	if (info->flag[e_minus] != '1' && (info->point != 1 || nbr != 0))
 	{
 		ft_putnchar('0', diff);
-		ft_write_unsigned(nbr);
+		u_itoa_hex(nbr);
 	}
 }
 void	ft_solve_uint(t_info *info)

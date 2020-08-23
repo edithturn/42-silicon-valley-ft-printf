@@ -6,34 +6,18 @@
 /*   By: epuclla <epuclla@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/04 19:10:21 by epuclla           #+#    #+#             */
-/*   Updated: 2020/08/20 22:07:59 by epuclla          ###   ########.fr       */
+/*   Updated: 2020/08/23 07:25:08 by epuclla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static	int	x_handle_length(t_info *info, unsigned long long int nbr)
-{
-	int	nbrlen;
-
-	nbrlen = 0;
-	if (nbr == 0 && info->point != 1)
-		nbrlen++;
-	while (nbr > 0)
-	{
-		nbrlen++;
-		nbr = nbr / 16;
-	}
-	return nbrlen;
-	
-}
-
-void	ft_write_hexadecimal(unsigned long long nbr, char format)
+void	h_itoa_hex(unsigned long long nbr, char format)
 {
 	if (nbr > 15)
 	{
-		ft_write_hexadecimal(nbr / 16, format);
-		ft_write_hexadecimal(nbr % 16, format);
+		h_itoa_hex(nbr / 16, format);
+		h_itoa_hex(nbr % 16, format);
 	}
 	else
 	{
@@ -46,11 +30,12 @@ void	ft_write_hexadecimal(unsigned long long nbr, char format)
 
 static void		x_handle_flag(t_info *info, unsigned long long nbr, int nbrlen, int diff)
 {
+	info->width++;
 	if (info->flag[e_minus] == '1')
 	{
 		ft_putnchar('0', diff);
 		if (info->point != 1 || nbr != 0)
-			ft_write_hexadecimal(nbr, *info->format);
+			h_itoa_hex(nbr, *info->format);
 		if (info->width > nbrlen)
 			while (--info->width > nbrlen + diff)
 				ft_putchar(' ');
@@ -64,28 +49,34 @@ static void		x_handle_flag(t_info *info, unsigned long long nbr, int nbrlen, int
 				ft_putchar('0');
 		ft_putnchar('0', diff);
 		if (info->point != 1 || nbr != 0)
-			ft_write_hexadecimal(nbr, *info->format);
+			h_itoa_hex(nbr, *info->format);
 	}
 }
 
 void	ft_solve_hex(t_info *info)
 {
 	unsigned long long	nbr;
+	unsigned long long	tmp;
 	int			nbrlen;
 	int diff;
 
 	nbr = (unsigned int)(va_arg(info->arguments, unsigned long long));
-	nbrlen = x_handle_length(info, nbr);
+	tmp = nbr;
+	nbrlen = 0;
+	if (tmp == 0 && info->point != 1)
+		nbrlen++;
+	while (tmp > 0)
+	{
+		nbrlen++;
+		tmp = tmp / 16;
+	}
 	diff = info->precision - nbrlen;
 	if(diff < 0)
 		diff = 0;
 	if (info->width <= info->precision)
 		info->total_length = info->total_length + diff;
 	if (info->width > nbrlen && info->width > info->precision)
-	{
-		info->total_length = info->total_length + (info->width - nbrlen);
-		info->width++;
-	}
+		info->total_length = info->total_length + (info->width - nbrlen);	
 	x_handle_flag(info, nbr, nbrlen, diff);
 	info->total_length = info->total_length + nbrlen;
 	info->format++;
