@@ -6,7 +6,7 @@
 /*   By: epuclla <epuclla@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/04 19:06:23 by epuclla           #+#    #+#             */
-/*   Updated: 2020/08/22 18:10:34 by epuclla          ###   ########.fr       */
+/*   Updated: 2020/08/22 18:19:38 by epuclla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,8 @@ static	void handle_pointer (t_info *info, unsigned long long addr, int addrlen, 
 		else 
 		{
 			ft_putstr("0x");
+			if (IS_MACOS && addr == 0)
+				diff = 1;
 			ft_putnchar('0', diff);
 		}
 	}
