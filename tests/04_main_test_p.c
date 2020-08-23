@@ -6,7 +6,7 @@
 /*   By: epuclla <epuclla@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/19 22:11:54 by epuclla           #+#    #+#             */
-/*   Updated: 2020/08/22 18:31:35 by epuclla          ###   ########.fr       */
+/*   Updated: 2020/08/22 19:11:47 by epuclla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,9 +44,9 @@ int main()
 	printf("|%p|\n", NULL);*/
 
 	ft_printf("|%5p|\n", 0);
-	/*printf("|%5p|\n", 0);
+	printf("|%5p|\n", 0);
 	
-	ft_printf("%.*p\n", -1, s_hello);
+	/*ft_printf("%.*p\n", -1, s_hello);
 	printf("%.*p\n", -1, s_hello);
 
 	ft_printf("|%5p|\n", 0);
