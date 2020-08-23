@@ -6,7 +6,7 @@
 /*   By: epuclla <epuclla@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/19 22:11:54 by epuclla           #+#    #+#             */
-/*   Updated: 2020/08/22 19:11:47 by epuclla          ###   ########.fr       */
+/*   Updated: 2020/08/22 20:29:54 by epuclla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,6 @@ int main()
 
 	printf("\n----------------------------  Testing ft_printf [ Pointer ]  ----------------------------- \n\n");
 
-	//ft_printf("%s\n" , "|01| Null Pointer");
-	//ft_printf("%p\n", NULL);
-	//Pointers - Basic
 	static char	a01;
 	static unsigned char a02;
 	static short a03;
@@ -35,66 +32,59 @@ int main()
 	static void *a12;
 
 	char *s = "asd";
-    char **p = &s;
+	char **p = &s;
 	static char *s_hello = "hello world";
-  	//ft_printf("%p\n", p);
-  	//printf("%p\n\n", p);
 
-	/*ft_printf("|%p|\n", NULL);
-	printf("|%p|\n", NULL);*/
+	ft_printf(" LENGTH ft_printf : %d\n", ft_printf("|%p|", p));
+	printf(" LENGTH printf    : %d\n\n", printf("|%p|", p));
 
-	ft_printf("|%5p|\n", 0);
-	printf("|%5p|\n", 0);
-	
-	/*ft_printf("%.*p\n", -1, s_hello);
-	printf("%.*p\n", -1, s_hello);
+	ft_printf(" LENGTH ft_printf : %d\n", ft_printf("|%p|", NULL));
+	printf(" LENGTH printf    : %d\n\n", printf("|%p|", NULL));
 
-	ft_printf("|%5p|\n", 0);
-	printf("|%5p|\n", 0);
+	ft_printf(" LENGTH ft_printf : %d\n", ft_printf("|%5p|", 0));
+	printf(" LENGTH printf    : %d\n\n", printf("|%5p|", 0));
 
-	ft_printf("%.*p\n", -3, 0);
-	printf("%.*p\n", -3, 0);
-	
-	ft_printf("%.*p\n", -1, 0);
-	printf("%.*p\n", -1, 0);*/
-   
-    //printf("|%p|\n", NULL);
-    /*printf("The direction of s is: %p\n", &s);
+	ft_printf(" LENGTH ft_printf : %d\n", ft_printf("|%.*p|", -1, s_hello));
+	printf(" LENGTH printf    : %d\n\n", printf("|%.*p|", -1, s_hello));
 
-    printf("The value of p is: %p\n", p);
-    printf("The direction of p is: %p\n", &p);
+	ft_printf(" LENGTH ft_printf : %d\n", ft_printf("|%.*p|", -3, 0));
+	printf(" LENGTH printf    : %d\n\n", printf("|%.*p|", -3, 0));
 
-    printf("The direction of s[0] is: %p\n", &s[0]);
-    printf("The direction of s[1] is: %p\n", &s[1]);
-    printf("The direction of s[2] is: %p\n", &s[2]);
+	ft_printf(" LENGTH ft_printf : %d\n", ft_printf("|%.*p|", -1, 0));
+	printf(" LENGTH printf    : %d\n\n", printf("|%.*p|", -1, 0));
 
+	ft_printf(" LENGTH ft_printf : %d\n", ft_printf("The value of p is: |%p|", p));
+	printf(" LENGTH ft_printf : %d\n", printf("The value of p is: |%p|", p));
 
-    ft_printf("The value of s is: %p\n", s);
-    ft_printf("The direction of s is: %p\n", &s);
+	printf(" LENGTH printf    : %d\n\n", ft_printf("The direction of p is: |%p|", &p));
+	ft_printf(" LENGTH printf    : %d\n\n", ft_printf("The direction of p is: |%p|", &p));
 
-    ft_printf("The value of p is: %p\n", p);
-    ft_printf("The direction of p is: %p\n", &p);
+	ft_printf(" LENGTH ft_printf : %d\n", ft_printf("The direction of s[0] is: |%p|", &s[0]));
+	printf(" LENGTH ft_printf : %d\n", printf("The direction of s[0] is: |%p|", &s[0]));
 
-    ft_printf("The direction of s[0] is: %p\n", &s[0]);
-    ft_printf("The direction of s[1] is: %p\n", &s[1]);
-    ft_printf("The direction of s[2] is: %p\n", &s[2]);
+	ft_printf(" LENGTH ft_printf : %d\n", ft_printf("The direction of s[1] is: |%p|", &s[1]));
+	printf(" LENGTH ft_printf : %d\n", printf("The direction of s[1] is: |%p|", &s[1]));
 
-	ft_printf("|%p|\n", NULL);
-	printf("|%p|\n", NULL);
+	ft_printf(" LENGTH ft_printf : %d\n", ft_printf("The direction of s[2] is: |%p|", &s[2]));
+	printf(" LENGTH ft_printf : %d\n", printf("The direction of s[2] is: |%p|", &s[2]));
 
-	ft_printf("|%5p|\n", 0);
-	printf("|%5p|\n", 0); 
+	ft_printf(" LENGTH ft_printf : %d\n", ft_printf("The value of s is: %p", s));
+	printf(" LENGTH ft_printf : %d\n", printf("The value of s is: |%p|", s));
 
-	ft_printf("%p%p%p%p%p%p%p%p%p%p%p%p",&a01,&a02,&a03,&a04,&a05,&a06,&a07,&a08,&a09,&a10,&a11,&a12);
+	ft_printf(" LENGTH ft_printf : %d\n", ft_printf("The direction of s is: |%p|", &s));
+	printf(" LENGTH ft_printf : %d\n", printf("The direction of s is: |%p|", &s));
 
-	
+	 ft_printf(" LENGTH ft_printf : %d\n", ft_printf("|%p%p%p%p%p%p%p%p%p%p%p%p|",&a01,&a02,&a03,&a04,&a05,&a06,&a07,&a08,&a09,&a10,&a11,&a12));
+	printf(" LENGTH ft_printf : %d\n", printf("|%p%p%p%p%p%p%p%p%p%p%p%p|",&a01,&a02,&a03,&a04,&a05,&a06,&a07,&a08,&a09,&a10,&a11,&a12));
+
+	/* //Others
 	ft_printf("%70p%70p%70p%70p%70p%70p%70p%70p%70p%70p%70p%70p",&a01,&a02,&a03,&a04,&a05,&a06,&a07,&a08,&a09,&a10,&a11,&a12);
 	ft_printf("%5p%5p%5p%5p%5p%5p%5p%5p%5p%5p%5p%5p",&a01,&a02,&a03,&a04,&a05,&a06,&a07,&a08,&a09,&a10,&a11,&a12);
 	ft_printf("%5p%5p%5p%5p%5p%5p%5p%5p%5p%5p%5p%5p",&a01,&a02,&a03,&a04,&a05,&a06,&a07,&a08,&a09,&a10,&a11,&a12);
 	ft_printf("%16p%16p%16p%16p%16p%16p%16p%16p%16p%16p%16p%16p",&a01,&a02,&a03,&a04,&a05,&a06,&a07,&a08,&a09,&a10,&a11,&a12);
 	ft_printf("%8p%8p%8p%8p%8p%8p%8p%8p%8p%8p%8p%8p",&a01,&a02,&a03,&a04,&a05,&a06,&a07,&a08,&a09,&a10,&a11,&a12);
 	ft_printf("%8p%8p%8p%8p%8p%8p%8p%8p%8p%8p%8p%8p",&a01,&a02,&a03,&a04,&a05,&a06,&a07,&a08,&a09,&a10,&a11,&a12);
-*/
+	*/
 
 	return (0);
 }

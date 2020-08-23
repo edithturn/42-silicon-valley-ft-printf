@@ -6,7 +6,7 @@
 /*   By: epuclla <epuclla@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/19 22:11:54 by epuclla           #+#    #+#             */
-/*   Updated: 2020/08/21 21:06:59 by epuclla          ###   ########.fr       */
+/*   Updated: 2020/08/22 20:20:31 by epuclla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,16 @@ int main()
 	ft_printf("|%.1u|\n", 34);
 
 	ft_printf("|%-8.7u|\n", 4);
+
+	// Mick
+	printf("\n");
+	printf("\n");
+	printf("\n");
+	printf("%s\n", "Mick Test Cases");
+    ft_printf("% 12u", 4294967295);
+    printf("\n");
+    printf("% 12u", 4294967295);
+    printf("\n");
 
 	//ft_printf("|%u|\n", -17);
 	//printf("|%u|\n", 4294967295u);
