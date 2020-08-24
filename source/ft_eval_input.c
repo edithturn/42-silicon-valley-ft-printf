@@ -6,21 +6,21 @@
 /*   By: epuclla <epuclla@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/29 00:31:21 by epuclla           #+#    #+#             */
-/*   Updated: 2020/08/23 10:59:50 by epuclla          ###   ########.fr       */
+/*   Updated: 2020/08/23 21:41:09 by epuclla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_eval_input(t_info	*info)
+void	ft_eval_input(t_info *info)
 {
+	int					number;
+
 	info->format++;
+	number = 0;
 	ft_eval_flag(info);
 	ft_eval_width(info);
 	ft_eval_precision(info);
-	int number;
-
-	number = 0;
 	if (*info->format == 'c')
 		number = e_char;
 	else if (*info->format == 's')
@@ -36,18 +36,16 @@ void	ft_eval_input(t_info	*info)
 	else if (*info->format == '%')
 		number = e_percentage;
 	else
-		write(1, "Error", 5);
-	
-	//Dispatch table
-	t_formatter	*functions_array[e_length] = {
-		[e_char] = ft_solve_char,
-		[e_string] = ft_solve_string,
-		[e_pointer] = ft_solve_pointer,
-		[e_decimal_int] = ft_solve_di,
-		[e_u_dec_int] = ft_solve_uint,
-		[e_u_hex_int] = ft_solve_hex,
-		[e_percentage] = ft_solve_percent,
-	};
+		ft_putstr_fd("[ERROR]->", 1);
 
+	t_formatter	*functions_array[e_length] = {
+	[e_char] = ft_solve_char,
+	[e_string] = ft_solve_string,
+	[e_pointer] = ft_solve_pointer,
+	[e_decimal_int] = ft_solve_di,
+	[e_u_dec_int] = ft_solve_uint,
+	[e_u_hex_int] = ft_solve_hex,
+	[e_percentage] = ft_solve_percent,
+};
 	functions_array[number](info);
 }

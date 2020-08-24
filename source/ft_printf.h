@@ -6,7 +6,7 @@
 /*   By: epuclla <epuclla@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/23 10:01:30 by epuclla           #+#    #+#             */
-/*   Updated: 2020/08/23 15:32:54 by epuclla          ###   ########.fr       */
+/*   Updated: 2020/08/23 18:45:35 by epuclla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,6 @@ void				ft_eval_input(t_info	*info);
 void				ft_eval_flag(t_info *info);
 void				ft_eval_width(t_info *info);
 void				ft_eval_precision(t_info *info);
-void				ft_putnbr(long long i);
 
 /*
 **  ft_printf extra functions

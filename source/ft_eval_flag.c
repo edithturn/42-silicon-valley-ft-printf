@@ -6,7 +6,7 @@
 /*   By: epuclla <epuclla@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/15 22:13:29 by epuclla           #+#    #+#             */
-/*   Updated: 2020/08/20 22:18:27 by epuclla          ###   ########.fr       */
+/*   Updated: 2020/08/23 17:33:08 by epuclla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,9 @@ void	ft_eval_flag(t_info *info)
 {
 	info->flag[e_minus] = '0';
 	info->flag[e_zero] = '0';
-
-	while(*info->format == '-' || *info->format == '0')
+	while (*info->format == '-' || *info->format == '0')
 	{
-		if(*info->format == '-')
+		if (*info->format == '-')
 			info->flag[e_minus] = '1';
 		if (*info->format == '0')
 			info->flag[e_zero] = '1';

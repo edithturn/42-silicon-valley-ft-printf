@@ -6,13 +6,26 @@
 /*   By: epuclla <epuclla@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/04 19:09:25 by epuclla           #+#    #+#             */
-/*   Updated: 2020/08/21 14:31:49 by epuclla          ###   ########.fr       */
+/*   Updated: 2020/08/23 18:45:05 by epuclla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static	void	di_handle_width(t_info *info, long long nbr, int nbrlen, int diff)
+void	ft_putnbr(long long nbr)
+{
+	if (nbr < 0)
+		ft_putnbr(nbr * -1);
+	else if (nbr >= 0 && nbr <= 9)
+		ft_putchar('0' + nbr);
+	else
+	{
+		ft_putnbr(nbr / 10);
+		ft_putnbr(nbr % 10);
+	}
+}
+
+static void			di_handle_width(t_info *info, long long nbr, int nbrlen, int diff)
 {
 	if (info->flag[e_zero] == '1' && diff == 0)
 	{
@@ -37,7 +50,7 @@ static	void	di_handle_width(t_info *info, long long nbr, int nbrlen, int diff)
 		ft_putnbr(nbr);
 }
 
-static	void	di_handle_flag(t_info *info, int nbr, int nbrlen, int diff)
+static void			di_handle_flag(t_info *info, int nbr, int nbrlen, int diff)
 {
 	if (info->flag[e_minus] == '1')
 	{
@@ -64,7 +77,7 @@ static	void	di_handle_flag(t_info *info, int nbr, int nbrlen, int diff)
 		}
 	}
 }
-void	ft_solve_di(t_info *info)
+void			ft_solve_di(t_info *info)
 {
 	long long nbr;
 	int	nbrlen;
