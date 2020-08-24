@@ -6,7 +6,7 @@
 /*   By: epuclla <epuclla@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/19 09:57:51 by epuclla           #+#    #+#             */
-/*   Updated: 2020/08/21 23:15:43 by epuclla          ###   ########.fr       */
+/*   Updated: 2020/08/24 12:42:05 by epuclla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,11 +75,5 @@ void				ft_putchar_fd(char c, int fd);
 int		ft_nbrlen(long long nbr);
 void	ft_putnchar(char c, int n);
 
-
-# if __APPLE__
-#  define IS_MACOS 1
-# else
-#  define IS_MACOS 0
-# endif
 
 #endif
