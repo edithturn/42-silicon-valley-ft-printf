@@ -6,13 +6,13 @@
 /*   By: epuclla <epuclla@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/04 19:10:02 by epuclla           #+#    #+#             */
-/*   Updated: 2020/08/23 23:38:16 by epuclla          ###   ########.fr       */
+/*   Updated: 2020/08/23 23:49:20 by epuclla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void			u_itoa_hex(unsigned long long nbr)
+void				u_itoa_hex(unsigned long long nbr)
 {
 	if (nbr > 9)
 	{

@@ -6,7 +6,7 @@
 /*   By: epuclla <epuclla@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/04 19:05:50 by epuclla           #+#    #+#             */
-/*   Updated: 2020/08/21 23:47:20 by epuclla          ###   ########.fr       */
+/*   Updated: 2020/08/23 23:45:48 by epuclla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ void	c_handle_width(t_info *info)
 				ft_putchar(' ');
 	}
 }
+
 void	ft_solve_char(t_info *info)
 {
 	char	c;
@@ -36,6 +37,6 @@ void	ft_solve_char(t_info *info)
 	c_handle_width(info);
 	if (info->flag[e_minus] != '1')
 		ft_putchar(c);
-	info->total_length++; 
+	info->total_length++;
 	info->format++;
 }
