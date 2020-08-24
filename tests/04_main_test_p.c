@@ -6,7 +6,7 @@
 /*   By: epuclla <epuclla@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/19 22:11:54 by epuclla           #+#    #+#             */
-/*   Updated: 2020/08/23 06:30:05 by epuclla          ###   ########.fr       */
+/*   Updated: 2020/08/24 00:55:05 by epuclla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,17 +35,17 @@ int main()
 	char **p = &s;
 	static char *s_hello = "hello world";
 
-	/*ft_printf(" LENGTH ft_printf : %d\n", ft_printf("|%p|", p));
+	ft_printf(" LENGTH ft_printf : %d\n", ft_printf("|%p|", p));
 	printf(" LENGTH printf    : %d\n\n", printf("|%p|", p));
 
 	ft_printf(" LENGTH ft_printf : %d\n", ft_printf("|%p|", NULL));
 	printf(" LENGTH printf    : %d\n\n", printf("|%p|", NULL));
 
 	ft_printf(" LENGTH ft_printf : %d\n", ft_printf("|%5p|", 0));
-	printf(" LENGTH printf    : %d\n\n", printf("|%5p|", 0));*/
+	printf(" LENGTH printf    : %d\n\n", printf("|%5p|", 0));
 
 	ft_printf(" LENGTH ft_printf : %d\n", ft_printf("|%.*p|", -1, s_hello));
-	/*printf(" LENGTH printf    : %d\n\n", printf("|%.*p|", -1, s_hello));
+	printf(" LENGTH printf    : %d\n\n", printf("|%.*p|", -1, s_hello));
 
 	ft_printf(" LENGTH ft_printf : %d\n", ft_printf("|%.*p|", -3, 0));
 	printf(" LENGTH printf    : %d\n\n", printf("|%.*p|", -3, 0));
