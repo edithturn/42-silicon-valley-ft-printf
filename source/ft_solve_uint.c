@@ -6,13 +6,13 @@
 /*   By: epuclla <epuclla@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/04 19:10:02 by epuclla           #+#    #+#             */
-/*   Updated: 2020/08/23 23:49:20 by epuclla          ###   ########.fr       */
+/*   Updated: 2020/08/24 00:04:25 by epuclla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void				u_itoa_hex(unsigned long long nbr)
+void			u_itoa_hex(unsigned long long nbr)
 {
 	if (nbr > 9)
 	{
@@ -23,7 +23,7 @@ void				u_itoa_hex(unsigned long long nbr)
 		ft_putchar(nbr + '0');
 }
 
-static	void	u_handle_wdt(t_info *info, unsigned long long n, int nl, int df)
+static void		u_handle_wdt(t_info *info, unsigned long long n, int nl, int df)
 {
 	if (info->flag[e_zero] == '1' && (info->flag[e_minus] != 1 && df == 0))
 	{
@@ -45,7 +45,7 @@ static	void	u_handle_wdt(t_info *info, unsigned long long n, int nl, int df)
 	}
 }
 
-static void	u_handle_uint(t_info *info, unsigned long long n, int nl, int df)
+static void		handle_u(t_info *info, unsigned long long n, int nl, int df)
 {
 	if (info->flag[e_minus] == '1' && (info->point != 1 || n != 0))
 	{
@@ -64,7 +64,7 @@ static void	u_handle_uint(t_info *info, unsigned long long n, int nl, int df)
 	}
 }
 
-void		ft_solve_uint(t_info *info)
+void			ft_solve_uint(t_info *info)
 {
 	unsigned long long	nbr;
 	unsigned long long	tmp;
@@ -88,7 +88,7 @@ void		ft_solve_uint(t_info *info)
 		info->total_length = info->total_length + diff;
 	if (info->width > nbrlen && info->width > info->precision)
 		info->total_length = info->total_length + (info->width - nbrlen);
-	u_handle_uint(info, nbr, nbrlen, diff);
+	handle_u(info, nbr, nbrlen, diff);
 	info->total_length = info->total_length + nbrlen;
 	info->format++;
 }
