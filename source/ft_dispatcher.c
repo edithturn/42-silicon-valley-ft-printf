@@ -6,7 +6,7 @@
 /*   By: epuclla <epuclla@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/23 21:54:10 by epuclla           #+#    #+#             */
-/*   Updated: 2020/08/24 00:44:31 by epuclla          ###   ########.fr       */
+/*   Updated: 2020/08/24 10:02:09 by epuclla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_dispatcher(t_info *info, int num)
 {
-	t_formatter	*functions_array[e_length] = {
+	const	t_formatter	*functions_array[e_length] = {
 	[e_char] = ft_solve_char,
 	[e_string] = ft_solve_string,
 	[e_pointer] = ft_solve_pointer,
