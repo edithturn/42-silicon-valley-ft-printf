@@ -6,11 +6,11 @@
 /*   By: epuclla <epuclla@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/04 19:10:59 by epuclla           #+#    #+#             */
-/*   Updated: 2020/08/23 16:48:40 by epuclla          ###   ########.fr       */
+/*   Updated: 2020/08/24 15:56:25 by epuclla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../includes/ft_printf.h"
 
 void	perc_handle_width(t_info *info)
 {

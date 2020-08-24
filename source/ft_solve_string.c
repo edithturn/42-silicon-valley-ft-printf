@@ -6,11 +6,11 @@
 /*   By: epuclla <epuclla@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/29 00:20:59 by epuclla           #+#    #+#             */
-/*   Updated: 2020/08/23 18:41:23 by epuclla          ###   ########.fr       */
+/*   Updated: 2020/08/24 15:56:41 by epuclla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../includes/ft_printf.h"
 
 void			s_handle_width(t_info *info, int strlen)
 {

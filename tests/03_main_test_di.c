@@ -6,12 +6,12 @@
 /*   By: epuclla <epuclla@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/10 08:38:06 by epuclla           #+#    #+#             */
-/*   Updated: 2020/08/21 14:15:44 by epuclla          ###   ########.fr       */
+/*   Updated: 2020/08/24 15:57:11 by epuclla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
-#include "../source/ft_printf.h"
+#include "../includes/ft_printf.h"
 
 int main()
 {

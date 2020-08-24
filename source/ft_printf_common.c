@@ -6,11 +6,11 @@
 /*   By: epuclla <epuclla@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/21 23:49:56 by epuclla           #+#    #+#             */
-/*   Updated: 2020/08/24 11:40:28 by epuclla          ###   ########.fr       */
+/*   Updated: 2020/08/24 15:56:02 by epuclla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../includes/ft_printf.h"
 
 int		ft_select_format_specifier(t_info *info)
 {

@@ -6,11 +6,11 @@
 /*   By: epuclla <epuclla@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/29 00:31:21 by epuclla           #+#    #+#             */
-/*   Updated: 2020/08/24 11:39:36 by epuclla          ###   ########.fr       */
+/*   Updated: 2020/08/24 15:58:10 by epuclla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../includes/ft_printf.h"
 
 void	ft_eval_input(t_info *info)
 {
