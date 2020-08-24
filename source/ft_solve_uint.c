@@ -6,13 +6,13 @@
 /*   By: epuclla <epuclla@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/04 19:10:02 by epuclla           #+#    #+#             */
-/*   Updated: 2020/08/23 07:40:54 by epuclla          ###   ########.fr       */
+/*   Updated: 2020/08/23 23:38:16 by epuclla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	u_itoa_hex(unsigned long long nbr)
+void			u_itoa_hex(unsigned long long nbr)
 {
 	if (nbr > 9)
 	{
@@ -23,56 +23,57 @@ void	u_itoa_hex(unsigned long long nbr)
 		ft_putchar(nbr + '0');
 }
 
-static	void	u_handle_width(t_info *info, unsigned long long nbr, int numlen, int diff)
+static	void	u_handle_wdt(t_info *info, unsigned long long n, int nl, int df)
 {
-	if (info->flag[e_zero] == '1' && (info->flag[e_minus] != 1 && diff == 0))
+	if (info->flag[e_zero] == '1' && (info->flag[e_minus] != 1 && df == 0))
 	{
 		if (info->point != 0)
-			while (--info->width > numlen)
+			while (--info->width > nl)
 				ft_putchar(' ');
 		else
-			while (--info->width > numlen)
+			while (--info->width > nl)
 				ft_putchar('0');
 	}
 	else
 	{
-		if(info->point != 1 || nbr != 0)
-			while (--info->width > numlen + diff)
+		if (info->point != 1 || n != 0)
+			while (--info->width > nl + df)
 				ft_putchar(' ');
 		else
-			while(--info->width > 0)
+			while (--info->width > 0)
 				ft_putchar(' ');
 	}
 }
 
-static	void	u_handle_uint(t_info *info, unsigned	long long nbr, int numlen, int diff)
+static void	u_handle_uint(t_info *info, unsigned long long n, int nl, int df)
 {
-	if(info->flag[e_minus] == '1' && (info->point != 1 || nbr != 0))
+	if (info->flag[e_minus] == '1' && (info->point != 1 || n != 0))
 	{
-		ft_putnchar('0', diff);
-		u_itoa_hex(nbr);
+		ft_putnchar('0', df);
+		u_itoa_hex(n);
 	}
-	if (info->width > numlen)
+	if (info->width > nl)
 	{
 		info->width++;
-		u_handle_width(info, nbr, numlen, diff);
+		u_handle_wdt(info, n, nl, df);
 	}
-	if (info->flag[e_minus] != '1' && (info->point != 1 || nbr != 0))
+	if (info->flag[e_minus] != '1' && (info->point != 1 || n != 0))
 	{
-		ft_putnchar('0', diff);
-		u_itoa_hex(nbr);
+		ft_putnchar('0', df);
+		u_itoa_hex(n);
 	}
 }
-void	ft_solve_uint(t_info *info)
+
+void		ft_solve_uint(t_info *info)
 {
-	unsigned	long long nbr;
-	unsigned	long long tmp;
-	int	nbrlen;
-	int	diff;
+	unsigned long long	nbr;
+	unsigned long long	tmp;
+	int					nbrlen;
+	int					diff;
 
 	nbrlen = 0;
 	nbr = (unsigned int)(va_arg(info->arguments, long long));
-	tmp  = nbr;
+	tmp = nbr;
 	if (tmp == 0 && info->point != 1)
 		nbrlen++;
 	while (tmp > 0)
@@ -80,12 +81,12 @@ void	ft_solve_uint(t_info *info)
 		nbrlen++;
 		tmp /= 10;
 	}
-	diff =  info->precision - nbrlen;
-	if(diff < 0)
+	diff = info->precision - nbrlen;
+	if (diff < 0)
 		diff = 0;
 	if (info->width <= info->precision)
 		info->total_length = info->total_length + diff;
-	if (info->width > nbrlen && info->width > info-> precision)
+	if (info->width > nbrlen && info->width > info->precision)
 		info->total_length = info->total_length + (info->width - nbrlen);
 	u_handle_uint(info, nbr, nbrlen, diff);
 	info->total_length = info->total_length + nbrlen;
