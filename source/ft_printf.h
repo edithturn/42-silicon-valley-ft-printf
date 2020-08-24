@@ -6,7 +6,7 @@
 /*   By: epuclla <epuclla@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/23 10:01:30 by epuclla           #+#    #+#             */
-/*   Updated: 2020/08/23 22:45:16 by epuclla          ###   ########.fr       */
+/*   Updated: 2020/08/24 11:40:45 by epuclla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,9 +79,8 @@ void				ft_eval_precision(t_info *info);
 **  ft_printf extra functions
 */
 int					ft_handle_length(t_info *info, int addr, int addrlen);
-
+int					ft_select_format_specifier(t_info *info);
 typedef	void		t_formatter(t_info *info);
-void				ft_dispatcher(t_info *info, int num);
 
 # if __APPLE__
 #  define IS_MACOS 1
