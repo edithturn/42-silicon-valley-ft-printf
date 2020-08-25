@@ -6,7 +6,7 @@
 #    By: epuclla <epuclla@student.42.us.org>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/08/05 14:00:10 by epuclla           #+#    #+#              #
-#    Updated: 2020/08/14 19:43:41 by epuclla          ###   ########.fr        #
+#    Updated: 2020/08/24 23:47:36 by epuclla          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ SRCS=./libft/ft*.c ./source/ft*.c
 
 OBJECTS=ft*.o
 LIB_PATH = ./libft
-INCLUDES=./source
+INCLUDES=./includes
 
 all:$(NAME)
 
