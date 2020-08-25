@@ -6,7 +6,7 @@ Recode printf function
 ### Printf Workflow
 
 #### :bell: General WorkFlow
-![General Flow](img/graded_by_moulinete.png)
+![General Flow](img/general_flow.png.png)
 
 
 See workflow about each format specifier  [HERE](https://drive.google.com/file/d/1zPrMQ2q4wuR16TWdBtKlLVVquNKdpGmb/view?usp=sharing)
