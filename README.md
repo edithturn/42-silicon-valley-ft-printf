@@ -9,7 +9,7 @@ that will mimic the real printf, It will manage the following conversions: cspdi
 ![General Flow](img/general_flow.png)
 
 
-See workflow about each format specifier  [HERE](https://drive.google.com/file/d/1zPrMQ2q4wuR16TWdBtKlLVVquNKdpGmb/view?usp=sharing)
+:notes: See workflow about each format specifier  [HERE](https://drive.google.com/file/d/1zPrMQ2q4wuR16TWdBtKlLVVquNKdpGmb/view?usp=sharing)
 
 
 ##  Format Specifiers
@@ -28,12 +28,12 @@ gcc  ./tests/01_main_test_s.c libftprintf.a  -I ./include/
 
 ## Debug  Mode 
 
-- First: Change your Makefile, adding -g3
+First change your Makefile, adding -g3
 ```c
 	@$(CC) -g3 $(CFLAGS) $(SRCS) -I$(INCLUDES)
 ```
 Then execute:
-```c
+```bash
 cd {$HOME}/42-silicon-valley-ft-printf
 make all
 gcc -g3 ./tests/01_main_test_s.c libftprintf.a
@@ -49,7 +49,7 @@ run
 gui
 
 ```
-## Testers
+## :tv: Testers
 
 - https://github.com/Mazoise/42TESTERS-PRINTF (passed)
 - https://github.com/gavinfielder/pft	(passed)
