@@ -6,7 +6,7 @@
 /*   By: epuclla <epuclla@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/19 22:11:54 by epuclla           #+#    #+#             */
-/*   Updated: 2020/08/24 21:47:23 by epuclla          ###   ########.fr       */
+/*   Updated: 2020/08/25 00:30:42 by epuclla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,17 +23,17 @@ int main()
    	printf(" LENGTH printf    : %d\n\n", printf("|%05x|", 43));*/
 
 	ft_printf("|%*.-5u|\n", 453);
-	printf("|%*.-5u|\n\n", 453);
+	//printf("|%*.-5u|\n\n", 453);
 
-	/*ft_printf("|%p|\n", NULL);
-	printf("|%p|\n", NULL);
+	ft_printf("|%p|\n", NULL);
+	//printf("|%p|\n", NULL);
 
 	ft_printf("|%5p|\n", 0);
-	printf("|%5pu|\n", 0);
-    printf("|%s|\n", "_ _ _");
+	//printf("|%5pu|\n", 0);
+    //printf("|%s|\n", "_ _ _");
 
 	ft_printf("|%08.5u|\n", 34);
-	printf("|%08.5u|\n", 34);
+	//printf("|%08.5u|\n", 34);
 
 	ft_printf("|%-1u|\n", 34);
 
@@ -42,7 +42,7 @@ int main()
 	ft_printf("|%-8.7u|\n", 4);
 
 	//ft_printf("|%u|\n", -17);
-	//printf("|%u|\n", 4294967295u);*/
+	//printf("|%u|\n", 4294967295u);
 
 	return (0);
 }

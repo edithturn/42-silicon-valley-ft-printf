@@ -6,7 +6,7 @@
 /*   By: epuclla <epuclla@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/19 22:11:54 by epuclla           #+#    #+#             */
-/*   Updated: 2020/08/24 15:57:23 by epuclla          ###   ########.fr       */
+/*   Updated: 2020/08/25 00:28:59 by epuclla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,16 +27,16 @@ int main()
 
 	ft_printf("%s\n" , "~02~ Hexadecimal number width flag [0] and width");
 	ft_printf(" LENGTH printf    : %d\n", ft_printf("|%05x|", 43));
-   	printf(" LENGTH printf    : %d\n\n", printf("|%05x|", 43));
+   	//printf(" LENGTH printf    : %d\n\n", printf("|%05x|", 43));
 
 	ft_printf("%x\n",4294967295u);
-	printf("%x\n\n", 4294967295u);
+	//printf("%x\n\n", 4294967295u);
 
 	ft_printf("%x\n",33);
-	printf("%x\n\n", 33); 
+	//printf("%x\n\n", 33); 
 
 	ft_printf("%X\n",94827);
-	printf("%X\n\n", 94827); 
+	//printf("%X\n\n", 94827); 
 
 	return (0);
 }

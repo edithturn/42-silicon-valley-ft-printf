@@ -78,3 +78,19 @@ Use and install this repository:
 ```bash
 norminette *.*
 ```
+
+## Valgrind
+
+```bash
+make all
+
+gcc ./tests/01_main_test_c.c libftprintf.a  -I ./include/
+gcc ./tests/02_main_test_s.c libftprintf.a  -I ./include/
+gcc ./tests/03_main_test_di.c libftprintf.a  -I ./include/
+gcc ./tests/04_main_test_p.c libftprintf.a  -I ./include/
+gcc ./tests/05_main_test_x.c libftprintf.a  -I ./include/
+gcc ./tests/06_main_test_u.c libftprintf.a  -I ./include/
+gcc ./tests/07_main_test_prc.c libftprintf.a -I ./include/
+
+valgrind --tool=memcheck --leak-check=yes --show-reachable=yes --num-callers=20 --track-fds=yes ./a.out
+```
