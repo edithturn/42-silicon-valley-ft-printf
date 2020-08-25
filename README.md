@@ -56,9 +56,11 @@ Recommended tester:
 - git clone https://github.com/gavinfielder/pft.git pft && echo "pft/" >> .gitignore
 
 Others
+- - https://github.com/Mazoise/42TESTERS-PRINTF (passed)
+- https://github.com/gavinfielder/pft	(passed)
 - https://github.com/Kwevan/PRINTF_TESTER
-- https://github.com/Mazoise/42TESTERS-PRINTF
-- https://github.com/gavinfielder/pft
+
+
 - https://github.com/charMstr/printf_lover_v2
 
 #Resources:
