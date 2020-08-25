@@ -1,7 +1,8 @@
-# :palm_tree: :ear_of_rice: ft_printf
+# :palm_tree:  ft_printf
 
 ### Info:
-Recode printf function
+Write a library that contains ft_printf, a function
+that will mimic the real printf, It will manage the following conversions: cspdiuxX%
 
 ### Printf Workflow
 
@@ -16,6 +17,7 @@ See workflow about each format specifier  [HERE](https://drive.google.com/file/d
 make all
 gcc  ./tests/01_main_test_s.c libftprintf.a  -I ./include/
 ```
+**Note.**: You can use **make re** to clean and build again
 
 ## Debug  Mode 
 
