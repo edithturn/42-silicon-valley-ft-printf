@@ -1,7 +1,6 @@
 # :palm_tree:  ft_printf
 
-### Info:
-Write a library that contains ft_printf, a function
+Library that contains ft_printf, a function
 that will mimic the real printf, It will manage the following conversions: cspdiuxX%
 
 ### Printf Workflow
@@ -11,6 +10,14 @@ that will mimic the real printf, It will manage the following conversions: cspdi
 
 
 See workflow about each format specifier  [HERE](https://drive.google.com/file/d/1zPrMQ2q4wuR16TWdBtKlLVVquNKdpGmb/view?usp=sharing)
+
+
+##  Format Specifiers
+![Format Specifiers](img/format_specifiers.png)
+
+## Context
+
+**[ flags ] [ width ] [ precision ]**
 
 ## Compilation
 ```bash
@@ -53,6 +60,7 @@ gui
 - https://docs.google.com/document/d/1znc7N5ua3WC1PhGcirRhtadHYSrPK3wxTApMdlJXYes/edit?pli=1#
 - https://www.cplusplus.com/reference/cstdio/printf/
 - https://www.cypress.com/file/54441/download
+- http://www.cplusplus.com/reference/cstdio/printf/
 
 ## Norminette
 
