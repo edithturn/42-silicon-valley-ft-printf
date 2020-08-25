@@ -30,7 +30,7 @@ gcc  ./tests/01_main_test_s.c libftprintf.a  -I ./include/
 
 First change your Makefile, adding -g3
 ```c
-	@$(CC) -g3 $(CFLAGS) $(SRCS) -I$(INCLUDES)
+@$(CC) -g3 $(CFLAGS) $(SRCS) -I$(INCLUDES)
 ```
 Then execute:
 ```bash
