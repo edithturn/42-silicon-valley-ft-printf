@@ -3,6 +3,37 @@
 Library that contains ft_printf, a function
 that will mimic the real printf, It will manage the following conversions: cspdiuxX%
 
+### ft_printf.c
+
+```c
+#include "../includes/ft_printf.h"
+
+int	ft_printf(const char *format, ...)
+{
+	t_info		*info;
+	int			length;
+
+	info = (t_info *)ft_memalloc(sizeof(t_info));
+	va_start(info->arguments, format);
+	info->format = format;
+	while (*info->format)
+	{
+		while (*info->format && *info->format != '%')
+		{
+			ft_putchar(*info->format);
+			info->total_length++;
+			info->format++;
+		}
+		if (*info->format && *info->format == '%')
+			ft_eval_input(info);
+	}
+	va_end(info->arguments);
+	length = info->total_length;
+	free(info);
+	return (length);
+}
+```
+
 ### Printf Workflow
 
 #### :bell: General WorkFlow
@@ -51,10 +82,10 @@ gui
 ```
 ## :tv: Testers
 
-- https://github.com/Mazoise/42TESTERS-PRINTF (passed)
-- https://github.com/gavinfielder/pft	(passed)
-- https://github.com/Kwevan/PRINTF_TESTER
-- https://github.com/charMstr/printf_lover_v2
+[ ESTERS-PRINTF ](https://github.com/Mazoise/42TESTERS-PRINTF ) (passed) from *Mazoise*
+[ pft ](https://github.com/gavinfielder/pft) (passed) from *gavinfielder*
+[ PRINTF_TESTER ](https://github.com/Kwevan/PRINTF_TESTER) from *Kwevan*
+[ printf_lover_v2 ](https://github.com/charMstr/printf_lover_v2) from *charMstr*
 
 ## :fireworks: Resources:
 - https://docs.google.com/document/d/1znc7N5ua3WC1PhGcirRhtadHYSrPK3wxTApMdlJXYes/edit?pli=1#
@@ -66,6 +97,12 @@ gui
 
 Use and install this repository: 
 [ Norminette ](https://github.com/42sp/norminette-client.git)
+
+**Linux**
+```
+echo 'alias norminette="~/.norminette/norminette.rb"' >> ~/.profile
+source ~/.profile
+```
 
 **Run**
 ```bash
@@ -86,5 +123,13 @@ gcc ./tests/06_main_test_u.c libftprintf.a  -I ./include/
 gcc ./tests/07_main_test_prc.c libftprintf.a -I ./include/
 
 valgrind --tool=memcheck --leak-check=yes --show-reachable=yes --num-callers=20 --track-origins=yes --track-fds=yes ./a.out
-
 ```
+
+
+## Graded by Moulinette
+![alt text](img/graded_by_moulinete.png)
+
+
+### ft_printf pdf  new curriculum
+[Download from HERE](https://drive.google.com/file/d/1mnoosj61JIh1mJzK7XN3Q2VFhRK037T4/view?usp=sharing)
+ 

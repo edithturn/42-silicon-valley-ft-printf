@@ -6,7 +6,7 @@
 /*   By: epuclla <epuclla@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/10 08:38:06 by epuclla           #+#    #+#             */
-/*   Updated: 2020/08/25 10:04:26 by epuclla          ###   ########.fr       */
+/*   Updated: 2020/08/25 18:40:40 by epuclla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,10 @@ int main()
 
 	printf("\n----------------------------  Testing ft_printf [ Decimal - Integer ]  ----------------------------- \n\n");
 
+	ft_printf("%s\n" , "|01| Just decimal");
+	ft_printf("|%-10.8d|\n", 52);
+   	printf(" LENGTH printf    : %d\n\n", printf("|%d|", 52));
+	
 	ft_printf("%s\n" , "|01| Just decimal");
 	ft_printf("|%d|\n", 52);
    	printf(" LENGTH printf    : %d\n\n", printf("|%d|", 52));
@@ -86,7 +90,7 @@ int main()
 	ft_printf("|%4d|\n", 33);
 	printf("|%4d|\n", 33);
 	ft_printf("|%d|\n", 2147483648);
-	//printf("|%d|\n", 2147483648);
+	printf("|%d|\n", 2147483648);
 	
 	// Specific test
 	ft_printf("|%0*.*d|\n", 3, -2, 8);

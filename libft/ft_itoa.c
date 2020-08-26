@@ -6,7 +6,7 @@
 /*   By: epuclla <epuclla@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/22 20:13:31 by epuclla           #+#    #+#             */
-/*   Updated: 2020/07/27 16:32:48 by epuclla          ###   ########.fr       */
+/*   Updated: 2020/08/25 17:52:33 by epuclla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,25 +19,6 @@ static	char	*ft_ifzero(void)
 	ptr = "0";
 	return (ft_strdup(ptr));
 }
-/*
-void	*ft_memalloc(size_t size)
-{
-	char *ptr;
-
-	ptr = malloc(size);
-	if (ptr == NULL)
-		return (NULL);
-	ft_bzero(ptr, size);
-	return (ptr);
-}
-
-static	char	*ft_strnew(size_t size)
-{
-	char *ptr;
-
-	ptr = ft_memalloc(sizeof(char) * size + 1);
-	return (ptr);
-}*/
 
 char			*ft_itoa(int n)
 {

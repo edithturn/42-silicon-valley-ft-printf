@@ -6,7 +6,7 @@
 /*   By: epuclla <epuclla@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/15 19:30:11 by epuclla           #+#    #+#             */
-/*   Updated: 2020/08/17 00:51:28 by epuclla          ###   ########.fr       */
+/*   Updated: 2020/08/25 17:54:14 by epuclla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int		ft_nbrlen(long long nbr)
 	if (nbr == 0)
 		return (1);
 	if (nbr < 0)
-		nbr = nbr *(-1);
+		nbr = nbr * (-1);
 	while (nbr > 0)
 	{
 		nbrlen++;
