@@ -1,7 +1,8 @@
 # ft_printf  :whale2: :turtle:
 
 Library that contains ft_printf, a function
-that will mimic the real printf, It will manage the following conversions: **[ cspdiuxX%]**
+that will mimic the real printf, It will manage the following conversions:
+**[ cspdiuxX%]**
 
 ### ft_printf.c
 
@@ -35,7 +36,7 @@ int	ft_printf(const char *format, ...)
 ```
 
 ### General Workflow Printf :bell:
-![General Flow](img/general_flow.png)
+![General Flow](img/general_workflow.png)
 
 
 **:notes:** See workflow about each format specifier  **[HERE](https://drive.google.com/file/d/1zPrMQ2q4wuR16TWdBtKlLVVquNKdpGmb/view?usp=sharing)**

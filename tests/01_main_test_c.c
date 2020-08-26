@@ -6,7 +6,7 @@
 /*   By: epuclla <epuclla@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/06 16:16:39 by epuclla           #+#    #+#             */
-/*   Updated: 2020/08/25 21:15:19 by epuclla          ###   ########.fr       */
+/*   Updated: 2020/08/25 21:45:30 by epuclla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int main()
 	
 	system("clear");
 
-	printf("\n----------------------------  Testing ft_printf [ Decimal - Integer ]  ----------------------------- \n\n");
+	printf("\n----------------------------  Testing ft_printf [ Character ]  ----------------------------- \n\n");
 
 	char	s;
 
