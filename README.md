@@ -1,7 +1,7 @@
-# :palm_tree:  ft_printf
+# ft_printf  :whale2: :turtle:
 
 Library that contains ft_printf, a function
-that will mimic the real printf, It will manage the following conversions: cspdiuxX%
+that will mimic the real printf, It will manage the following conversions: **[ cspdiuxX%]**
 
 ### ft_printf.c
 
@@ -34,13 +34,11 @@ int	ft_printf(const char *format, ...)
 }
 ```
 
-### Printf Workflow
-
-#### :bell: General WorkFlow
+### General Workflow Printf :bell:
 ![General Flow](img/general_flow.png)
 
 
-:notes: See workflow about each format specifier  [HERE](https://drive.google.com/file/d/1zPrMQ2q4wuR16TWdBtKlLVVquNKdpGmb/view?usp=sharing)
+**:notes:** See workflow about each format specifier  **[HERE](https://drive.google.com/file/d/1zPrMQ2q4wuR16TWdBtKlLVVquNKdpGmb/view?usp=sharing)**
 
 
 ##  Format Specifiers
@@ -55,7 +53,7 @@ int	ft_printf(const char *format, ...)
 make all
 gcc  ./tests/01_main_test_s.c libftprintf.a  -I ./include/
 ```
-**Note.**: You can use **make re** to clean and build again
+**Note.**: You can use **"make re"** to clean and build again
 
 ## Debug  Mode 
 
@@ -63,7 +61,7 @@ First change your Makefile, adding -g3
 ```c
 @$(CC) -g3 $(CFLAGS) $(SRCS) -I$(INCLUDES)
 ```
-Then execute:
+Then, execute:
 ```bash
 cd {$HOME}/42-silicon-valley-ft-printf
 make all
@@ -82,10 +80,10 @@ gui
 ```
 ## :tv: Testers
 
-[ ESTERS-PRINTF ](https://github.com/Mazoise/42TESTERS-PRINTF ) (passed) from *Mazoise*
-[ pft ](https://github.com/gavinfielder/pft) (passed) from *gavinfielder*
-[ PRINTF_TESTER ](https://github.com/Kwevan/PRINTF_TESTER) from *Kwevan*
-[ printf_lover_v2 ](https://github.com/charMstr/printf_lover_v2) from *charMstr*
+- [ ESTERS-PRINTF ](https://github.com/Mazoise/42TESTERS-PRINTF ) (passed) from *Mazoise*
+- [ pft ](https://github.com/gavinfielder/pft) (passed) from *gavinfielder*
+- [ PRINTF_TESTER ](https://github.com/Kwevan/PRINTF_TESTER) from *Kwevan*
+- [ printf_lover_v2 ](https://github.com/charMstr/printf_lover_v2) from *charMstr*
 
 ## :fireworks: Resources:
 - https://docs.google.com/document/d/1znc7N5ua3WC1PhGcirRhtadHYSrPK3wxTApMdlJXYes/edit?pli=1#
@@ -98,13 +96,13 @@ gui
 Use and install this repository: 
 [ Norminette ](https://github.com/42sp/norminette-client.git)
 
-**Linux**
+### Linux
 ```
 echo 'alias norminette="~/.norminette/norminette.rb"' >> ~/.profile
 source ~/.profile
 ```
 
-**Run**
+### Run
 ```bash
 norminette *.*
 ```
