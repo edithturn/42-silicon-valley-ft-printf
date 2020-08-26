@@ -1,6 +1,6 @@
 # ft_printf  :whale2: :turtle:
 
-Library that contains ft_printf, a function that will mimic the real printf, It will manage the following conversions:**[ cspdiuxX%]**
+Library that contains ft_printf, a function that will mimic the real printf, It will manage the following conversions **[ cspdiuxX%]**
 
 ### ft_printf.c
 
