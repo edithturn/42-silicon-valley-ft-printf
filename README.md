@@ -50,7 +50,7 @@ int	ft_printf(const char *format, ...)
 ## Compilation
 ```bash
 make all
-gcc  ./tests/01_main_test_s.c libftprintf.a  -I ./include/
+gcc  ./tests/01_main_test_c.c libftprintf.a  -I ./include/
 ```
 **Note.**: You can use **"make re"** to clean and build again
 
@@ -64,7 +64,7 @@ Then, execute:
 ```bash
 cd {$HOME}/42-silicon-valley-ft-printf
 make all
-gcc -g3 ./tests/01_main_test_s.c libftprintf.a
+gcc -g3 ./tests/01_main_test_c.c libftprintf.a
 gcc -g3 ./tests/02_main_test_s.c libftprintf.a
 gcc -g3 ./tests/03_main_test_di.c libftprintf.a
 gcc -g3 ./tests/04_main_test_p.c libftprintf.a
