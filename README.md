@@ -39,7 +39,7 @@ int	ft_printf(const char *format, ...)
 
 ### See diagrams for each format specifier :octopus:
 
-* [General workflow](https://viewer.diagrams.net/?page-id=1YTrTW2MsC1Di0wU-gv0&highlight=0000ff&edit=_blank&layers=1&nav=1&hide-pages=1#G1zPrMQ2q4wuR16TWdBtKlLVVquNKdpGmb) :paw_prints:
+:paw_prints: [General workflow](https://viewer.diagrams.net/?page-id=1YTrTW2MsC1Di0wU-gv0&highlight=0000ff&edit=_blank&layers=1&nav=1&hide-pages=1#G1zPrMQ2q4wuR16TWdBtKlLVVquNKdpGmb) :paw_prints:
 
 * [Format Specifier - Char](https://viewer.diagrams.net/?page-id=sbkMw0dUxeduTBVlYtC2&highlight=0000ff&edit=_blank&layers=1&nav=1&hide-pages=1#G1zPrMQ2q4wuR16TWdBtKlLVVquNKdpGmb)
 * [Format Specifier - String](https://viewer.diagrams.net/?page-id=upzOOSU7zCkQETzXmLYp&highlight=0000ff&edit=_blank&layers=1&nav=1&page-id=upzOOSU7zCkQETzXmLYp#G1zPrMQ2q4wuR16TWdBtKlLVVquNKdpGmb)
