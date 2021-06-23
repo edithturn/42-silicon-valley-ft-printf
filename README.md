@@ -39,11 +39,12 @@ int	ft_printf(const char *format, ...)
 
 **See workflow about each format specifier  [HERE](https://drive.google.com/file/d/1zPrMQ2q4wuR16TWdBtKlLVVquNKdpGmb/view?usp=sharing)** **:notes:**
 
-* [General workflow](https://drive.google.com/file/d/1zPrMQ2q4wuR16TWdBtKlLVVquNKdpGmb/view?usp=sharing)
-* [Format Specifier - Char](https://drive.google.com/file/d/1zPrMQ2q4wuR16TWdBtKlLVVquNKdpGmb/view?usp=sharing)
+### See other diagrams
+
+* [General workflow](https://viewer.diagrams.net/?page-id=1YTrTW2MsC1Di0wU-gv0&highlight=0000ff&edit=_blank&layers=1&nav=1&hide-pages=1#G1zPrMQ2q4wuR16TWdBtKlLVVquNKdpGmb)
+* [Format Specifier - Char](https://viewer.diagrams.net/?page-id=sbkMw0dUxeduTBVlYtC2&highlight=0000ff&edit=_blank&layers=1&nav=1&hide-pages=1#G1zPrMQ2q4wuR16TWdBtKlLVVquNKdpGmb)
 * [Format Specifier - String](https://viewer.diagrams.net/?page-id=upzOOSU7zCkQETzXmLYp&highlight=0000ff&edit=_blank&layers=1&nav=1&page-id=upzOOSU7zCkQETzXmLYp#G1zPrMQ2q4wuR16TWdBtKlLVVquNKdpGmb)
 * [Format Specifier - Interger](https://viewer.diagrams.net/?page-id=2B_SWecsSpEZ6vEh3epM&highlight=0000ff&edit=_blank&layers=1&nav=1&hide-pages=1#G1zPrMQ2q4wuR16TWdBtKlLVVquNKdpGmb)
-
 * [Format Specifier - Pointer](https://viewer.diagrams.net/?page-id=cQUwrNA3bVdBqMu45jfG&highlight=0000ff&edit=_blank&layers=1&nav=1&hide-pages=1#G1zPrMQ2q4wuR16TWdBtKlLVVquNKdpGmb)
 * [Format Specifier - Unsigned](https://viewer.diagrams.net/?page-id=Jeof49Ll0B8E9NBXiXwg&highlight=0000ff&edit=_blank&layers=1&nav=1&hide-pages=1#G1zPrMQ2q4wuR16TWdBtKlLVVquNKdpGmb)
 
